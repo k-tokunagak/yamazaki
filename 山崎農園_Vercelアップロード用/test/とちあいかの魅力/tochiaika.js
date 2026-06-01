@@ -107,3 +107,18 @@
     if (window.innerWidth >= 768 && isOpen) closeMenu();
   });
 })();
+
+/* ===========================================================
+   ===== フローティング お問い合わせボタン =================
+   =========================================================== */
+(function() {
+  const fab = document.getElementById('fabContact');
+  if (!fab) return;
+  function update() {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    if (y > 140) fab.classList.add('is-visible'); else fab.classList.remove('is-visible');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();

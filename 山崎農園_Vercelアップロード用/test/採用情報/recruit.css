@@ -69,7 +69,7 @@
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 28px 24px 56px;
+  padding: 0 24px 24px;
 }
 
 /* モバイル: 文字色を画像背景に合わせて濃いトーンに */
@@ -255,7 +255,7 @@
    ============================================================ */
 .recruit-work {
   background: #FFFCF8;  /* ヒーローと繋げるためクリーム色に統一 */
-  padding: 88px 0 104px;
+  padding: 32px 0 104px;
   position: relative;
 }
 .recruit-work-head {
@@ -366,7 +366,7 @@
    ④ 働く環境（画像 + チェックリスト + メッセージ）
    ============================================================ */
 .recruit-env {
-  background: var(--cream);
+  background: linear-gradient(180deg, #FBEFE8 0%, #F8E8DE 100%);
   padding: 96px 0;
   position: relative;
 }
@@ -773,10 +773,10 @@
    モバイル微調整
    ============================================================ */
 @media (max-width: 767px) {
-  .recruit-hero-inner { padding-top: 80px; padding-left: 22px; padding-right: 22px; }
+  .recruit-hero-inner { padding-top: 0; padding-left: 22px; padding-right: 22px; }
   .recruit-intro { padding: 64px 0 40px; }
   .recruit-intro-text p { font-size: 16px; line-height: 2.1; }
-  .recruit-work { padding: 64px 0 80px; }
+  .recruit-work { padding: 24px 0 80px; }
   .recruit-env { padding: 64px 0 72px; }
   .recruit-welcome { padding: 64px 0 80px; }
   .recruit-message { padding: 80px 0 80px; }
