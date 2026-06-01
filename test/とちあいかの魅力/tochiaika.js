@@ -107,3 +107,35 @@
     if (window.innerWidth >= 768 && isOpen) closeMenu();
   });
 })();
+
+
+/* ===========================================================
+   ===== 上へ戻るボタン & スマホお問い合わせボタン制御 =====
+   =========================================================== */
+(function() {
+  const backTop = document.getElementById('backTop');
+  const fab = document.getElementById('fabContact');
+
+  function updateFloatingButtons() {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+
+    if (backTop) {
+      backTop.classList.toggle('show', y > 380);
+    }
+
+    if (fab) {
+      fab.classList.toggle('is-visible', y > 140);
+    }
+  }
+
+  window.addEventListener('scroll', updateFloatingButtons, { passive: true });
+  window.addEventListener('resize', updateFloatingButtons, { passive: true });
+  updateFloatingButtons();
+
+  if (backTop) {
+    backTop.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();

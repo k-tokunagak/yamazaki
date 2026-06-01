@@ -1591,3 +1591,24 @@ footer.foot {
   color: #fff !important;
 }
 
+
+
+/* ===========================================================
+   ===== スマホ固定ボタン重なり修正（直売所ページ） =========
+   =========================================================== */
+@media (max-width: 767px) {
+  .fab-contact {
+    right: 16px !important;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 900 !important;
+  }
+
+  .back-top,
+  .btt,
+  #backTop,
+  #btt {
+    right: 16px !important;
+    bottom: calc(78px + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 899 !important;
+  }
+}
