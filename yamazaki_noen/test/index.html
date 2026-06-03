@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>山崎農園 | いちご王国・栃木から、最高の一粒を。</title>
+  <meta name="description" content="山崎農園は栃木県のいちご農園です。朝採りの新鮮ないちご「とちあいか」を直売所にてお届けしています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PARALLAX 固定背景（JS制御・スマホ対応） -->
+<div class="parallax-bg-fixed" id="parallaxBg" aria-hidden="true"></div>
+
+<!-- FLOATING STRAWBERRY DECORATIONS -->
+<div class="strawberry-float-layer" aria-hidden="true">
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+  <span class="sf">🍓</span>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+
+  <a href="#" class="nav-logo">
+    <!-- いちごSVGアイコン（高品質・ブランドロゴ風） -->
+    <svg class="nav-logo-icon" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <!-- 苺本体グラデーション（赤〜深紅） -->
+        <linearGradient id="nav-berry" x1="10" y1="10" x2="18" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#FF6B7A"/>
+          <stop offset="45%"  stop-color="#E60033"/>
+          <stop offset="100%" stop-color="#B8001F"/>
+        </linearGradient>
+        <!-- 艶ハイライト -->
+        <radialGradient id="nav-shine" cx="38%" cy="28%" r="38%">
+          <stop offset="0%"  stop-color="#fff" stop-opacity="0.28"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <!-- ヘタグラデーション -->
+        <linearGradient id="nav-hull" x1="14" y1="6" x2="14" y2="13" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"  stop-color="#68D391"/>
+          <stop offset="100%" stop-color="#2F855A"/>
+        </linearGradient>
+      </defs>
+
+      <!-- ヘタ（葉） -->
+      <g opacity="0.92">
+        <!-- 中央の葉 -->
+        <path d="M14 11.5C14 11.5 13.5 7.5 14 5.5C14.5 7.5 14 11.5 14 11.5Z"
+              fill="url(#nav-hull)" stroke="none"/>
+        <!-- 左葉 -->
+        <path d="M14 11C14 11 10.5 8.5 9.5 6.5C11.5 7.5 14 11 14 11Z"
+              fill="url(#nav-hull)" stroke="none"/>
+        <!-- 右葉 -->
+        <path d="M14 11C14 11 17.5 8.5 18.5 6.5C16.5 7.5 14 11 14 11Z"
+              fill="url(#nav-hull)" stroke="none"/>
+        <!-- 外左葉 -->
+        <path d="M13.5 11.5C13.5 11.5 9 10 7.5 8.5C9.5 9 13.5 11.5 13.5 11.5Z"
+              fill="url(#nav-hull)" opacity="0.75"/>
+        <!-- 外右葉 -->
+        <path d="M14.5 11.5C14.5 11.5 19 10 20.5 8.5C18.5 9 14.5 11.5 14.5 11.5Z"
+              fill="url(#nav-hull)" opacity="0.75"/>
+      </g>
+
+      <!-- 苺本体 -->
+      <path d="M14 12C9.5 12 6 15.5 6.5 20C7 24 10.5 28.5 14 29C17.5 28.5 21 24 21.5 20C22 15.5 18.5 12 14 12Z"
+            fill="url(#nav-berry)"/>
+      <!-- 艶ハイライト -->
+      <ellipse cx="11.5" cy="18" rx="3.5" ry="4.5" fill="url(#nav-shine)"/>
+
+      <!-- 種（白い小さな点を上品に配置） -->
+      <g fill="rgba(255,255,255,0.55)" stroke="none">
+        <circle cx="11.5" cy="17.5" r="0.85"/>
+        <circle cx="14"   cy="15.5" r="0.85"/>
+        <circle cx="16.5" cy="17.5" r="0.85"/>
+        <circle cx="12.5" cy="21"   r="0.85"/>
+        <circle cx="15.5" cy="21"   r="0.85"/>
+        <circle cx="14"   cy="24.5" r="0.75"/>
+        <circle cx="11"   cy="14.5" r="0.7" opacity="0.7"/>
+        <circle cx="17"   cy="14.5" r="0.7" opacity="0.7"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">
+      <span class="nav-logo-ja">山崎農園</span>
+      <span class="nav-logo-en">Yamazaki Farm</span>
+    </span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#features">とちあいかの魅力</a></li>
+    <li><a href="#cultivation">こだわりの栽培</a></li>
+    <li><a href="#shop">直売所</a></li>
+    <li><a href="#recruit">採用情報</a></li>
+  </ul>
+
+  <!-- ハンバーガーボタン（スマホ用） -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="nav-hamburger-line"></span>
+    <span class="nav-hamburger-line"></span>
+    <span class="nav-hamburger-line"></span>
+  </button>
+
+</nav>
+
+<!-- モバイルメニュー（スマホ用ドロワー） -->
+<div id="mobileMenuBackdrop" aria-hidden="true"></div>
+<aside id="mobileMenu" aria-hidden="true" role="dialog" aria-label="ナビゲーションメニュー">
+
+  <!-- ヘッダー行 -->
+  <div class="mm-header-row">
+    <div class="mm-header-left">
+      <span class="mm-header-label">MENU</span>
+      <span class="mm-header-line"></span>
+      <span class="mm-header-brand">YAMAZAKI FARM</span>
+    </div>
+    <button class="mm-close-btn" id="mobileMenuClose" aria-label="メニューを閉じる"></button>
+  </div>
+
+  <!-- ナビリスト -->
+  <ul class="mm-nav-list">
+    <li><a href="#hero"        data-menu-link><span class="mm-n">00</span>ホーム</a></li>
+    <li><a href="#features"    data-menu-link><span class="mm-n">01</span>とちあいかの魅力</a></li>
+    <li><a href="#cultivation" data-menu-link><span class="mm-n">02</span>こだわりの栽培</a></li>
+    <li><a href="#shop"        data-menu-link><span class="mm-n">03</span>直売所</a></li>
+    <li><a href="#recruit"     data-menu-link><span class="mm-n">04</span>採用情報</a></li>
+  </ul>
+
+  <!-- ブランドロゴ -->
+  <div class="mm-brand-visual">
+    <img src="yamazaki_logo_chars.png" alt="苺のやまざき YAMAZAKI FARM" loading="lazy">
+  </div>
+
+  <!-- 電話番号 -->
+  <a href="tel:09041214132" class="mm-tel-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.13.96.34 1.9.61 2.81a2 2 0 0 1-.45 2.11L7.09 8.75a16 16 0 0 0 6 6l1.11-1.11a2 2 0 0 1 2.11-.45c.91.27 1.85.48 2.81.61A2 2 0 0 1 21 16.92z"/>
+    </svg>
+    <div class="mm-tel-body">
+      <span class="mm-tel-label">お電話でのお問い合わせ</span>
+      <span class="mm-tel-num">090-4121-4132</span>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="mm-ig-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+    @ichigo_no_yamazaki
+  </a>
+
+</aside>
+
+<!-- ① HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <img src="./yamazaki_logo.png" alt="苺のやまざき YAMAZAKI FARM" class="hero-logo">
+    <div class="hero-tag">YAMAZAKI FARM — TOCHIGI, JAPAN</div>
+    <h1 class="hero-title">
+      いちご王国・栃木から、<br><span>最高の一粒</span>を。
+    </h1>
+    <p class="hero-sub">いちばん美味しい“完熟の瞬間”を農園からダイレクトにお届けします。</p>
+    <a href="#shop" class="btn-primary">
+      <span>購入方法を見る</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ② FEATURES -->
+<section id="features" class="parallax">
+  <div class="container">
+
+    <!-- とちあいか -->
+    <div class="reveal tochiaika-section-wrap" style="margin-bottom: 80px;">
+      <span class="section-label">OUR STRAWBERRY</span>
+      <h2 class="section-title">とちあいかの魅力</h2>
+      <div class="section-divider"></div>
+      <p class="section-lead">栃木県が誇る新品種「とちあいか」。<br>見た目の美しさと圧倒的な甘さで、いちごの常識を塗り替えます。</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-num">01</div>
+          <h3 class="feature-title">圧倒的な甘さ</h3>
+          <p class="feature-text">糖度が高く、一口食べるだけで広がる豊かな甘みが特徴です。甘さの中にも品のある風味があり、子どもから大人まで幅広く愛されています。</p>
+        </div>
+        <div class="feature-card feature-card--no-hover">
+          <div class="feature-num">02</div>
+          <h3 class="feature-title">食べやすい穏やかな酸味</h3>
+          <p class="feature-text">酸味が少なく、甘みがダイレクトに感じられます。いちごが得意でない方にも食べやすいと好評で、リピーターが続出しています。</p>
+        </div>
+        <div class="feature-card feature-card--no-hover">
+          <div class="feature-num">03</div>
+          <h3 class="feature-title">断面がハート型の美しさ</h3>
+          <p class="feature-text">縦に切ると現れるハート型の断面が、見た目にも愛らしい。ギフトやスイーツの飾りとしても人気が高く、SNSでも話題を集めています。</p>
+        </div>
+        <div class="feature-card feature-card--has-character">
+          <div class="feature-num">04</div>
+          <h3 class="feature-title">しっかりした実と日持ち</h3>
+          <p class="feature-text">実が引き締まっており、傷みにくく輸送にも強い<br>のが特徴。業務用途でも高く評価されており、<br>新鮮な状態での安定供給が可能です。</p>
+          <!-- キャラクター画像（透明PNG・浮遊アニメーション） -->
+          <div class="tochiaika-character" aria-hidden="true">
+            <img src="./tochiaika_character.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- とちあいか詳細ページへのリンクボタン -->
+      <div style="margin-top: 44px; text-align: center;">
+        <a href="./tochiaika/tochiaika.html" class="btn-cultivation-detail">
+          <span>とちあいかの魅力を詳しく見る</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- こだわりの栽培 -->
+    <div id="cultivation" class="reveal">
+      <span class="section-label">CULTIVATION</span>
+      <h2 class="section-title">こだわりの栽培</h2>
+      <div class="section-divider"></div>
+
+      <div class="cultivation-wrap">
+        <div class="cultivation-img">
+          <img src="./kodawari.jpg" alt="いちご栽培ハウス">
+        </div>
+        <div class="cultivation-points">
+          <div class="point-item">
+            <div class="point-accent-line"></div>
+            <div class="point-icon-wrap"></div>
+            <div class="point-body">
+              <h4>徹底した肥料管理</h4>
+              <p class="point-desc">土づくりから見直し、旨みを引き出す独自の施肥設計を行っています。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-accent-line"></div>
+            <div class="point-icon-wrap"></div>
+            <div class="point-body">
+              <h4>毎日一株ずつ状態確認</h4>
+              <p class="point-desc">毎朝ハウスを巡回し、葉の色・実の張りを一株ずつ丁寧に確認します。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-accent-line"></div>
+            <div class="point-icon-wrap"></div>
+            <div class="point-body">
+              <h4>安定品質の供給体制</h4>
+              <p class="point-desc">収穫量の波を最小限に抑え、ご注文に応じた安定出荷を実現しています。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-accent-line"></div>
+            <div class="point-icon-wrap"></div>
+            <div class="point-body">
+              <h4>環境に配慮した農業</h4>
+              <p class="point-desc">農薬使用を必要最低限に抑え、土と自然に寄り添った栽培を心がけています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 詳細ページへのリンクボタン -->
+      <div style="margin-top: 44px; text-align: center;">
+        <a href="./cultivation/cultivation.html" class="btn-cultivation-detail">
+          <span>栽培へのこだわりを詳しく見る</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ③ STORY -->
+<section id="story">
+  <div class="container reveal" style="position: relative; z-index: 1;">
+    <div class="story-layout">
+      <!-- 左：テキスト -->
+      <div class="story-text-col">
+        <span class="section-label">OUR STORY</span>
+        <h2 class="section-title" style="color: white;">受け継いだ土地で、<br>新しい挑戦を。</h2>
+        <div class="section-divider"></div>
+
+        <blockquote class="story-quote">
+          「おじいちゃんが守ってきた土地で、<br>もっとおいしいいちごを育てたい」
+        </blockquote>
+
+        <p class="story-body">
+          山崎農園の歴史は、祖父が丹精込めて耕した一枚の畑から始まります。その土地が持つ可能性を信じ、現在の代表が伝統農業に最新の栽培技術を融合させ、品質の向上に挑み続けています。<br><br>
+          大量生産ではなく、一粒一粒に向き合う姿勢を大切に。顔の見える農家として、直接お客様に喜んでいただけることが何よりの励みです。
+        </p>
+
+        <div class="story-values">
+          <span class="story-tag">丁寧な手仕事</span>
+          <span class="story-tag">伝統と革新の融合</span>
+          <span class="story-tag">顔の見える農家</span>
+          <span class="story-tag">土への敬意</span>
+          <span class="story-tag">地域への貢献</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ SHOP – REDESIGNED -->
+<section id="shop">
+  <div class="container">
+
+    <!-- セクションヘッダー -->
+    <div class="reveal" style="margin-bottom: 48px;">
+      <span class="section-label">DIRECT SALES</span>
+      <h2 class="section-title">朝採り直売所</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- 朝採りキャッチフレーズ -->
+    <div class="reveal shop-morning-banner">
+      <p class="shop-morning-phrase">鮮度抜群の朝採りいちごを、<em>その場でお渡しします。</em></p>
+      <p class="shop-morning-phrase">朝だけ並ぶ、<em>特別な粒があります。</em></p>
+      <p class="shop-morning-phrase">収穫した<em>その日のうちに</em>直売しています。</p>
+      <p class="shop-morning-sub">ご家庭用から贈答用までご用意しています。</p>
+    </div>
+
+    <!-- カードグリッド -->
+    <div class="shop-cards-grid">
+
+      <!-- ① 地図カード -->
+      <div class="reveal shop-card shop-card--map">
+        <div class="shop-card-map-frame">
+          <iframe
+  src="https://www.google.com/maps?q=%E8%8B%BA%E3%81%AE%E3%82%84%E3%81%BE%E3%81%96%E3%81%8D%20%E5%B1%B1%E5%B4%8E%E8%BE%B2%E5%9C%92%20%E6%A0%83%E6%9C%A8%E7%9C%8C%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%E9%87%9D%E3%83%B6%E8%B0%B7%E7%94%BA239-1&output=embed"
+  width="100%"
+  height="360"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="山崎農園 Googleマップ">
+</iframe>
+        </div>
+        <div class="shop-card-map-body">
+          <div class="shop-card-address-row">
+            <div class="shop-card-address-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#E60033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="shop-card-address-label">ADDRESS</div>
+              <div class="shop-card-address-text">〒321-0147<br>栃木県宇都宮市針ヶ谷町239-1</div>
+            </div>
+          </div>
+          <div class="shop-card-map-btns">
+            <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google Mapで開く
+            </a>
+            <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              カーナビで開く
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ② 営業情報カード -->
+      <div class="reveal shop-card shop-card--hours">
+        <div class="shop-card-header">
+          <div class="shop-card-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E60033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="shop-card-header-label">BUSINESS HOURS</div>
+            <div class="shop-card-header-title">営業情報</div>
+          </div>
+        </div>
+        <div class="shop-hours-rows">
+          <div class="shop-hours-row">
+            <span class="shop-hours-key">シーズン</span>
+            <span class="shop-hours-val">11月 〜 5月<small>いちごの収穫期のみ営業</small></span>
+          </div>
+          <div class="shop-hours-row">
+            <span class="shop-hours-key">営業時間</span>
+            <span class="shop-hours-val">9:00 〜 16:00<small>朝採り完売時は早めに終了</small></span>
+          </div>
+          <div class="shop-hours-row">
+            <span class="shop-hours-key">定休日</span>
+            <span class="shop-hours-val">日曜日<small>祝日は営業・翌月曜休業</small></span>
+          </div>
+          <div class="shop-hours-row">
+            <span class="shop-hours-key">TEL</span>
+            <span class="shop-hours-val">090-4121-4132<small>お気軽にご連絡ください</small></span>
+          </div>
+        </div>
+        <div class="shop-soldout-badge">朝採りが完売した時点で閉店となります</div>
+      </div>
+
+      <!-- ③ 人気の朝採りいちごカード（直売所詳細ページへの導線） -->
+      <a href="./shop/chokubaijo.html" class="reveal shop-card shop-card--product">
+        <div class="shop-product-photo">
+          <img src="./ichigo.jpg" alt="朝採りとちあいか" loading="lazy">
+          <span class="shop-product-fresh-tag">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            本日朝採り
+          </span>
+        </div>
+        <div class="shop-product-body">
+          <div class="shop-product-meta">
+            <span class="shop-product-label">PICK UP</span>
+            <span class="shop-product-meta-dot" aria-hidden="true"></span>
+            <span class="shop-product-cat">人気の品</span>
+          </div>
+          <h3 class="shop-product-title">朝採りとちあいか</h3>
+          <p class="shop-product-desc">糖度が高く、酸味おだやか。<br>農園で一番人気の主力品種です。</p>
+          <div class="shop-product-pricerow">
+            <div class="shop-product-price">
+              <span class="shop-product-price-from">¥</span>
+              <span class="shop-product-price-num">1,600</span>
+              <span class="shop-product-price-unit">〜 / 2パック</span>
+            </div>
+            <span class="shop-product-detail-link">
+              詳細を見る
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ④ カレンダーカード -->
+      <div class="reveal shop-card shop-card--calendar">
+
+        <!-- ヘッダー -->
+        <div class="shop-card-header">
+          <div class="shop-card-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E60033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="shop-card-header-label">CALENDAR</div>
+            <div class="shop-card-header-title">営業日カレンダー</div>
+          </div>
+        </div>
+
+        <!-- 凡例バー -->
+        <div class="cal-legend-bar">
+          <span class="cal-legend-bar-title">COLOR GUIDE</span>
+          <span class="cal-legend-pill cal-legend-pill--open">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#E60033" opacity="0.85"/></svg>
+            営業日
+          </span>
+          <span class="cal-legend-pill cal-legend-pill--closed">
+            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#aaa"/></svg>
+            定休日
+          </span>
+        </div>
+
+        <!-- Googleカレンダー埋め込み -->
+        <div class="gcal-outer">
+          <div class="gcal-frame-wrap">
+            <!--
+              ▼ ここにGoogleカレンダーの埋め込みURLを設定してください
+              手順: Googleカレンダー → 設定 → カレンダーの設定
+                    → 「カレンダーを統合」→「埋め込みコード」をコピー
+              下記 src の URL を自分のカレンダーIDに変更してください
+            -->
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40gmail.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&bgcolor=%23ffffff&color=%23E60033"
+              frameborder="0"
+              scrolling="no"
+              title="山崎農園 営業日カレンダー"
+              loading="lazy"
+              aria-label="営業日カレンダー"
+            ></iframe>
+            <div class="gcal-frame-overlay-top" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- 注意文 -->
+        <div class="cal-notice">
+          <svg class="cal-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <p class="cal-notice-text">※営業日は天候・収穫状況により変更となる場合があります</p>
+        </div>
+
+      </div>
+
+      <!-- ⑤ 朝採りメッセージカード -->
+      <div class="reveal shop-card shop-card--message">
+        <span class="shop-message-icon">🍓</span>
+        <p class="shop-message-main">
+          毎朝、畑から<em>直接お届け</em>する<br>特別な一粒があります。
+        </p>
+        <p class="shop-message-sub">
+          最新の営業・完売情報はInstagramでご確認ください。
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: center;">
+          <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="btn-cultivation-detail">
+            <span>Instagramを見る</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 直売所詳細ページへの自然な導線 -->
+    <div class="reveal shop-lineup-cta">
+      <a href="./shop/chokubaijo.html" class="btn-cultivation-detail">
+        <span>朝採りいちごの詳細ページを見る</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- ⑤ RECRUIT -->
+<section id="recruit">
+  <!-- 採用セクション専用いちご装飾 -->
+  <span class="recruit-deco recruit-deco--1" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--2" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--3" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--4" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--5" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--6" aria-hidden="true">🍓</span>
+  <div class="container">
+    <div class="recruit-inner recruit-inner--centered">
+      <div class="reveal recruit-content-centered">
+        <span class="recruit-badge">🍓 STAFF WANTED</span>
+        <span class="section-label">RECRUIT</span>
+        <h2 class="section-title">一緒に働く仲間を<br>募集しています</h2>
+        <div class="section-divider"></div>
+
+        <div class="recruit-img recruit-img--centered">
+          <img src="./recruit.jpg" alt="山崎農園のスタッフ">
+        </div>
+
+        <p class="recruit-lead">
+          農業が初めての方でも、<br class="sp-br">丁寧にサポートしています。
+        </p>
+
+        <a href="./recruit/recruit.html" class="btn-cultivation-detail">
+          <span>山崎農園で働くについて見る</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-label">ABOUT US</span>
+      <h2 class="section-title">農園概要</h2>
+      <div class="section-divider"></div>
+      <table class="about-table">
+        <tr>
+          <th>屋号</th>
+          <td>山崎農園</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>山崎 夏輝</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒321-0147 栃木県宇都宮市針ヶ谷町239-1<br>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td>0XX-XXXX-XXXX<br><span style="font-size:12px;color:var(--text-lt);">（ダミー：実際の番号に変更）</span></td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>いちごの生産・直売・出荷（個人・業者向け）</td>
+        </tr>
+        <tr>
+          <th>栽培品種</th>
+          <td>とちあいか（主力）</td>
+        </tr>
+        <tr>
+          <th>販売時期</th>
+          <td>11月〜5月（シーズン）</td>
+        </tr>
+        <tr>
+          <th>SNS</th>
+          <td>
+            <div class="about-sns-inline">
+              <a href="https://www.instagram.com/p/DOLSDFnE7N_/" target="_blank" class="about-sns-inline-link">
+                <svg class="about-sns-ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><defs><linearGradient id="igGradInline" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#igGradInline)"/><rect x="6.5" y="6.5" width="11" height="11" rx="3" ry="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16.5" cy="7.5" r="0.8" fill="white"/></svg>
+                <span>ichigo_no_yamazaki</span>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- ===== SNS SECTION ===== -->
+      <div class="about-sns-wrap reveal">
+
+        <!-- Instagram Card -->
+        <a href="https://www.instagram.com/p/DOLSDFnE7N_/" target="_blank" class="sns-card sns-card--instagram">
+          <div class="sns-card-glow sns-card-glow--ig"></div>
+          <div class="sns-card-inner">
+            <div class="sns-icon-wrap sns-icon-wrap--ig">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                <defs>
+                  <linearGradient id="igGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%"   style="stop-color:#f09433"/>
+                    <stop offset="25%"  style="stop-color:#e6683c"/>
+                    <stop offset="50%"  style="stop-color:#dc2743"/>
+                    <stop offset="75%"  style="stop-color:#cc2366"/>
+                    <stop offset="100%" style="stop-color:#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#igGrad1)"/>
+                <rect x="6.5" y="6.5" width="11" height="11" rx="3" ry="3" fill="none" stroke="white" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+                <circle cx="16.5" cy="7.5" r="0.8" fill="white"/>
+              </svg>
+            </div>
+            <div class="sns-card-text">
+              <div class="sns-card-label">Instagram</div>
+              <div class="sns-card-handle">@ichigo_no_yamazaki</div>
+              <div class="sns-card-desc">農園の日常・旬の情報を発信中</div>
+            </div>
+            <div class="sns-card-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- LINE Card -->
+        <div class="sns-card sns-card--line">
+          <div class="sns-card-glow sns-card-glow--line"></div>
+          <div class="sns-card-inner">
+            <div class="sns-icon-wrap sns-icon-wrap--line">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                <rect width="24" height="24" rx="6" fill="#06C755"/>
+                <path d="M12 4.5C7.86 4.5 4.5 7.3 4.5 10.75c0 2.88 2.28 5.31 5.44 6.02l-.44 1.63c-.05.17.13.31.28.22L14.1 16.6c.62-.07 1.22-.2 1.78-.37C18.52 15.4 20 13.2 20 10.75 20 7.3 16.14 4.5 12 4.5z" fill="white"/>
+                <path d="M9.5 12.25H8.25v-3h1.25v3zm3.5 0h-1.25V10.5l-1.75 1.75V9.25H11.25v1.75L13 9.25h1.25v3h-1.25V10.5l-1.75 1.75zm3.5 0H15.25v-3H16.5v1.75L18.25 9.25H19.5v3h-1.25V10.5l-1.75 1.75z" fill="#06C755"/>
+              </svg>
+            </div>
+            <div class="sns-card-text">
+              <div class="sns-card-label">公式 LINE</div>
+              <div class="sns-card-handle">山崎農園</div>
+              <div class="sns-card-desc">お気軽にお問い合わせください</div>
+            </div>
+          </div>
+
+          <!-- QR Code Area -->
+          <div class="line-qr-area">
+            <div class="line-qr-card">
+              <div class="line-qr-card-glow"></div>
+              <img src="./line_qr.png" alt="LINE QRコード" class="line-qr-img"
+                   onerror="this.closest('.line-qr-card').querySelector('.line-qr-fallback').style.display='flex'; this.style.display='none';">
+              <div class="line-qr-fallback">
+                <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg" opacity="0.25">
+                  <rect x="5" y="5" width="30" height="30" fill="none" stroke="#333" stroke-width="2"/><rect x="11" y="11" width="18" height="18" fill="#333"/>
+                  <rect x="45" y="5" width="30" height="30" fill="none" stroke="#333" stroke-width="2"/><rect x="51" y="11" width="18" height="18" fill="#333"/>
+                  <rect x="5" y="45" width="30" height="30" fill="none" stroke="#333" stroke-width="2"/><rect x="11" y="51" width="18" height="18" fill="#333"/>
+                  <rect x="45" y="45" width="8" height="8" fill="#333"/><rect x="57" y="45" width="8" height="8" fill="#333"/><rect x="45" y="57" width="8" height="8" fill="#333"/><rect x="57" y="57" width="8" height="8" fill="#333"/>
+                </svg>
+                <span style="font-size:11px;color:#aaa;margin-top:8px;">QR準備中</span>
+              </div>
+            </div>
+            <p class="line-qr-note">QRコードを読み取り<br>友だち追加してください</p>
+          </div>
+        </div>
+
+      </div><!-- /about-sns-wrap -->
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ NEWS / JOURNAL -->
+<section id="news" class="journal-section">
+  <!-- 背景装飾：うっすらいちご＆ロゴ -->
+  <div class="journal-bg-deco" aria-hidden="true">
+    <span class="journal-bg-sf">🍓</span>
+    <span class="journal-bg-sf">🍓</span>
+    <span class="journal-bg-sf">🍓</span>
+    <span class="journal-bg-sf">🍓</span>
+    <div class="journal-bg-logo"></div>
+  </div>
+
+  <div class="container">
+    <div class="journal-inner reveal">
+
+      <!-- ラベル -->
+      <span class="section-label">FARM JOURNAL</span>
+
+      <!-- タイトル -->
+      <h2 class="journal-title">
+        農園の日常と<br class="sp-only">最新情報
+      </h2>
+
+      <!-- 細い仕切り線 -->
+      <div class="journal-rule"></div>
+
+      <!-- サブコピー -->
+      <p class="journal-lead">
+        季節の収穫情報や農園のひとこまを、<br>
+        Instagramを中心に発信しています。
+      </p>
+
+      <!-- Instagram CTA カード -->
+      <a href="https://www.instagram.com/p/DOLSDFnE7N_/" target="_blank" rel="noopener" class="journal-ig-card">
+        <!-- ホバー時グロー -->
+        <div class="journal-ig-glow"></div>
+
+        <!-- 左：アイコン -->
+        <div class="journal-ig-icon-wrap">
+          <svg class="journal-ig-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="igJournalGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#f09433"/>
+                <stop offset="20%"  stop-color="#e6683c"/>
+                <stop offset="45%"  stop-color="#dc2743"/>
+                <stop offset="72%"  stop-color="#cc2366"/>
+                <stop offset="100%" stop-color="#bc1888"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="13" fill="url(#igJournalGrad)"/>
+            <rect x="13" y="13" width="22" height="22" rx="6" fill="none" stroke="white" stroke-width="2.8"/>
+            <circle cx="24" cy="24" r="6" fill="none" stroke="white" stroke-width="2.8"/>
+            <circle cx="33" cy="15" r="1.7" fill="white"/>
+          </svg>
+        </div>
+
+        <!-- 中：テキスト -->
+        <div class="journal-ig-text">
+          <div class="journal-ig-label">Instagram</div>
+          <div class="journal-ig-handle">ichigo_no_yamazaki</div>
+          <div class="journal-ig-cta-line">
+            <span class="journal-ig-btn">Instagramを見る</span>
+          </div>
+        </div>
+
+        <!-- 右：矢印 -->
+        <div class="journal-ig-arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- 下部メッセージ -->
+      <p class="journal-footer-note">
+        最新の収穫情報・直売所の営業状況も<br class="sp-only">Instagramにてお知らせしています。
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal" style="max-width: 640px; margin: 0 auto;">
+      <span class="section-label">CONTACT</span>
+      <h2 class="section-title">お問い合わせ</h2>
+      <div class="section-divider"></div>
+      <p class="section-lead" style="margin-bottom: 32px;">ご購入・取引・採用など、お気軽にご連絡ください。</p>
+
+      <!-- タブ -->
+      <div class="contact-tabs">
+        <button class="tab-btn active" data-tab="general">一般のお客様</button>
+        <button class="tab-btn" data-tab="business">業者・法人の方</button>
+      </div>
+
+      <!-- フォーム -->
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="form-label">お名前 *</label>
+          <input type="text" class="form-input" placeholder="山田 太郎">
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス *</label>
+          <input type="email" class="form-input" placeholder="example@email.com">
+        </div>
+        <div class="form-group business-fields" id="company-field">
+          <label class="form-label">会社名・屋号</label>
+          <input type="text" class="form-input" placeholder="株式会社〇〇">
+        </div>
+        <div class="form-group business-fields" id="volume-field">
+          <label class="form-label">ご希望のお取引内容</label>
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option>定期仕入れのご相談</option>
+            <option>スポット仕入れのご相談</option>
+            <option>サンプル請求</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">お問い合わせ内容 *</label>
+          <textarea class="form-textarea" placeholder="ご質問・ご要望をご記入ください"></textarea>
+        </div>
+        <button type="button" class="btn-submit">
+          <span>送信する</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <img src="./yamazaki_logo.png" alt="苺のやまざき" style="height:72px;width:auto;display:block;margin-bottom:16px;border-radius:50%;background:rgba(255,255,255,0.08);padding:6px;">
+        <p class="footer-tagline">
+          いちご王国・栃木から、<br>最高の一粒をお届けします。<br><br>
+          〒329-0147 栃木県宇都宮市針ヶ谷町239-1<br>
+          TEL: 090-4121-4132
+        </p>
+      </div>
+      <div class="footer-nav-block">
+        <div class="footer-nav-title">
+          <span class="footer-nav-title-en">FARM MENU</span>
+          <span class="footer-nav-title-ja">農園メニュー</span>
+        </div>
+        <ul class="footer-nav-list">
+          <li><a href="#features">いちごづくり</a></li>
+          <li><a href="#story">農園の想い</a></li>
+          <li><a href="#shop">直売所案内</a></li>
+          <li><a href="#recruit">採用情報</a></li>
+          <li><a href="#about">農園概要</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-block">
+        <div class="footer-nav-title">
+          <span class="footer-nav-title-en">CONTACT</span>
+          <span class="footer-nav-title-ja">お問い合わせ</span>
+        </div>
+        <ul class="footer-nav-list">
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#news">お知らせ</a></li>
+          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 山崎農園 All Rights Reserved.</span>
+      <a href="https://instagram.com" class="footer-instagram" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-top" id="backTop" aria-label="ページトップへ戻る">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+
+<!-- フローティング お問い合わせボタン（スマホ用） -->
+<a href="#contact" class="fab-contact" id="fabContact" aria-label="お問い合わせへ移動">
+  <span class="fab-contact-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+      <path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+    </svg>
+  </span>
+  <span class="fab-contact-text">お問い合わせ</span>
+</a>
+<script src="script.js"></script>
+</body>
+</html>
