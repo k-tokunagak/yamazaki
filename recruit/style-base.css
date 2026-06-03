@@ -741,14 +741,14 @@
     }
     @media (min-width: 768px) {
       .story-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 340px;
         gap: 0;
         align-items: end;
       }
     }
 
     .story-text-col {
-      max-width: 760px;
+      max-width: 620px;
       padding-bottom: 8px;
     }
 
@@ -1291,64 +1291,6 @@
     }
     @media (min-width: 768px) {
       .recruit-inner { grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    }
-
-    /* === 中央寄せレイアウト（採用CTA用） === */
-    .recruit-inner--centered {
-      grid-template-columns: 1fr !important;
-      max-width: 640px;
-      margin: 0 auto;
-      gap: 0;
-    }
-    @media (min-width: 768px) {
-      .recruit-inner--centered { grid-template-columns: 1fr !important; }
-    }
-
-    .recruit-content-centered {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .recruit-content-centered .section-label,
-    .recruit-content-centered .recruit-badge,
-    .recruit-content-centered .section-title,
-    .recruit-content-centered .section-divider,
-    .recruit-content-centered .recruit-lead {
-      text-align: center;
-      align-self: center;
-    }
-    .recruit-content-centered .section-divider {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .recruit-img--centered {
-      width: 100%;
-      max-width: 520px;
-      margin: 28px auto 32px;
-      aspect-ratio: 3/2;
-    }
-
-    .recruit-lead {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(15px, 3.8vw, 18px);
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.95;
-      letter-spacing: 0.06em;
-      margin: 4px auto 32px;
-      max-width: 520px;
-    }
-    @media (max-width: 600px) {
-      .recruit-lead .sp-br { display: none; }
-    }
-
-    .btn-outline--centered {
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .recruit-img {
@@ -2435,7 +2377,11 @@ nav.scrolled .nav-hamburger-line {
   .nav-links     { display: none !important; }
 }
 
-/* ===== Mobile Menu — クリーン版 ===== */
+/* ===========================================================
+   ===== モバイルメニュー（ドロワー）— 完全クリーン版 ========
+   =========================================================== */
+
+/* 背景オーバーレイ */
 #mobileMenuBackdrop {
   display: none;
   position: fixed;
@@ -2443,11 +2389,15 @@ nav.scrolled .nav-hamburger-line {
   z-index: 1100;
   background: rgba(30, 20, 10, 0.45);
 }
-#mobileMenuBackdrop.is-open { display: block; }
+#mobileMenuBackdrop.is-open {
+  display: block;
+}
 
+/* ドロワー本体 */
 #mobileMenu {
   position: fixed;
-  top: 0; right: 0;
+  top: 0;
+  right: 0;
   width: 300px;
   max-width: 88vw;
   height: 100%;
@@ -2459,8 +2409,11 @@ nav.scrolled .nav-hamburger-line {
   overflow-y: auto;
   overscroll-behavior: contain;
 }
-#mobileMenu.is-open { display: flex; }
+#mobileMenu.is-open {
+  display: flex;
+}
 
+/* ── ヘッダー行（MENU ─ YAMAZAKI FARM ／ ×ボタン） ── */
 .mm-header-row {
   display: flex;
   align-items: center;
@@ -2470,49 +2423,103 @@ nav.scrolled .nav-hamburger-line {
   flex-shrink: 0;
   background: #FFFCF8;
 }
-.mm-header-left { display: flex; align-items: center; gap: 10px; }
+.mm-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .mm-header-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.30em;
-  color: #E60033; text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.30em;
+  color: #E60033;
+  text-transform: uppercase;
 }
-.mm-header-line { width: 22px; height: 1px; background: rgba(160,120,80,0.30); }
+.mm-header-line {
+  width: 22px;
+  height: 1px;
+  background: rgba(160,120,80,0.30);
+}
 .mm-header-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.20em; color: #a08060;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  color: #a08060;
 }
+
+/* × ボタン */
 .mm-close-btn {
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border: 1px solid rgba(160,120,80,0.22);
-  border-radius: 50%; background: transparent;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; position: relative; -webkit-tap-highlight-color: transparent;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
-.mm-close-btn::before, .mm-close-btn::after {
-  content: ''; position: absolute;
-  width: 14px; height: 1.5px; background: #4a3d2e; border-radius: 2px;
+.mm-close-btn::before,
+.mm-close-btn::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 1.5px;
+  background: #4a3d2e;
+  border-radius: 2px;
 }
 .mm-close-btn::before { transform: rotate(45deg); }
 .mm-close-btn::after  { transform: rotate(-45deg); }
 
-.mm-nav-list { list-style: none; margin: 0; padding: 0; flex: 0 0 auto; }
-.mm-nav-list li { border-bottom: 1px solid rgba(160,120,80,0.08); }
-.mm-nav-list li:last-child { border-bottom: none; }
-.mm-nav-list a {
-  display: flex; align-items: center; gap: 14px;
-  padding: 15px 20px; text-decoration: none;
-  font-family: 'Shippori Mincho', serif;
-  font-size: 15px; font-weight: 500; color: #2c2016;
-  letter-spacing: 0.08em; -webkit-tap-highlight-color: transparent;
+/* ── メニューリスト ── */
+.mm-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
 }
-.mm-nav-list a:active { color: #E60033; background: rgba(230,0,51,0.04); }
+.mm-nav-list li {
+  border-bottom: 1px solid rgba(160,120,80,0.08);
+}
+.mm-nav-list li:last-child {
+  border-bottom: none;
+}
+.mm-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2c2016;
+  letter-spacing: 0.08em;
+  -webkit-tap-highlight-color: transparent;
+}
+.mm-nav-list a:active {
+  background: rgba(230,0,51,0.04);
+  color: #E60033;
+}
 /* ホームリンク（先頭）は控えめに */
-.mm-nav-list li:first-child a { font-size: 13px; color: #a08060; }
+.mm-nav-list li:first-child a {
+  font-size: 13px;
+  color: #a08060;
+  border-bottom: 1px solid rgba(160,120,80,0.12);
+}
 .mm-n {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.14em;
-  color: #b89a78; flex-shrink: 0; min-width: 18px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #b89a78;
+  flex-shrink: 0;
+  min-width: 18px;
 }
+
+/* ── 電話番号リンク ── */
 .mm-brand-visual {
   flex: 1 1 auto;
   display: flex;
@@ -2532,30 +2539,72 @@ nav.scrolled .nav-hamburger-line {
 }
 
 .mm-tel-link {
-  display: flex; align-items: center; gap: 12px;
-  margin: 12px 20px 0; padding: 14px 16px;
-  background: rgba(230,0,51,0.05); border: 1px solid rgba(230,0,51,0.20);
-  border-radius: 10px; text-decoration: none; flex-shrink: 0; color: #E60033;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 20px 0;
+  padding: 14px 16px;
+  background: rgba(230,0,51,0.05);
+  border: 1px solid rgba(230,0,51,0.20);
+  border-radius: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  color: #E60033;
 }
 .mm-tel-link svg { flex-shrink: 0; }
-.mm-tel-body { display: flex; flex-direction: column; gap: 3px; }
-.mm-tel-label { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; color: #a08060; letter-spacing: 0.06em; }
-.mm-tel-num { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; letter-spacing: 0.08em; color: #E60033; line-height: 1; }
-.mm-ig-link {
-  display: flex; align-items: center; gap: 10px;
-  margin: 12px 20px 20px; padding: 11px 14px;
-  border: 1px solid rgba(230,0,51,0.16); border-radius: 10px;
-  background: rgba(230,0,51,0.03); text-decoration: none;
-  color: #a08060; font-family: 'Cormorant Garamond', serif;
-  font-size: 12px; letter-spacing: 0.10em; flex-shrink: 0;
+.mm-tel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
-.mm-ig-link:active { background: rgba(230,0,51,0.08); color: #E60033; }
+.mm-tel-label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  color: #a08060;
+  letter-spacing: 0.06em;
+}
+.mm-tel-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #E60033;
+  line-height: 1;
+}
 
-body.menu-open { overflow: hidden; position: fixed; width: 100%; }
-body.menu-open #main-nav { opacity: 0; pointer-events: none; }
+/* ── Instagramリンク（下部） ── */
+.mm-ig-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 20px 20px;
+  padding: 11px 14px;
+  border: 1px solid rgba(230,0,51,0.16);
+  border-radius: 10px;
+  background: rgba(230,0,51,0.03);
+  text-decoration: none;
+  color: #a08060;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  flex-shrink: 0;
+}
+.mm-ig-link:active {
+  background: rgba(230,0,51,0.08);
+  color: #E60033;
+}
+
+/* スクロールロック */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+body.menu-open #main-nav {
+  opacity: 0;
+  pointer-events: none;
+}
 #main-nav { transition: background 0.5s ease, box-shadow 0.5s ease, padding 0.4s ease, opacity 0.28s ease; }
-
-
 
 /* ===========================================================
    ===== フローティング お問い合わせボタン =================
@@ -2952,11 +3001,4 @@ iframe[title="山崎農園 Googleマップ"] {
     height: 300px;
     min-height: 300px;
   }
-}
-
-
-/* STORYセクションのキャラクター非表示調整 */
-.story-character-col,
-.story-character-canvas {
-  display: none !important;
 }

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朝採り直売所 | 山崎農園</title>
+  <meta name="description" content="山崎農園の朝採り直売所。朝採りしたとちあいかを、一番美味しい状態でお渡しするため、完全予約制で販売しております。贈答用・全国発送も承ります。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav" data-screen-label="00 Nav">
+  <a href="../index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="nav-berry" x1="10" y1="10" x2="18" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#FF6B7A"></stop>
+          <stop offset="45%" stop-color="#E60033"></stop>
+          <stop offset="100%" stop-color="#B8001F"></stop>
+        </linearGradient>
+        <radialGradient id="nav-shine" cx="38%" cy="28%" r="38%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0.28"></stop>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="nav-hull" x1="14" y1="6" x2="14" y2="13" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#68D391"></stop>
+          <stop offset="100%" stop-color="#2F855A"></stop>
+        </linearGradient>
+      </defs>
+      <g opacity="0.92">
+        <path d="M14 11.5C14 11.5 13.5 7.5 14 5.5C14.5 7.5 14 11.5 14 11.5Z" fill="url(#nav-hull)"></path>
+        <path d="M14 11C14 11 10.5 8.5 9.5 6.5C11.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"></path>
+        <path d="M14 11C14 11 17.5 8.5 18.5 6.5C16.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"></path>
+        <path d="M13.5 11.5C13.5 11.5 9 10 7.5 8.5C9.5 9 13.5 11.5 13.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"></path>
+        <path d="M14.5 11.5C14.5 11.5 19 10 20.5 8.5C18.5 9 14.5 11.5 14.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"></path>
+      </g>
+      <path d="M14 12C9.5 12 6 15.5 6.5 20C7 24 10.5 28.5 14 29C17.5 28.5 21 24 21.5 20C22 15.5 18.5 12 14 12Z" fill="url(#nav-berry)"></path>
+      <ellipse cx="11.5" cy="18" rx="3.5" ry="4.5" fill="url(#nav-shine)"></ellipse>
+      <g fill="rgba(255,255,255,0.55)">
+        <circle cx="11.5" cy="17.5" r="0.85"></circle>
+        <circle cx="14" cy="15.5" r="0.85"></circle>
+        <circle cx="16.5" cy="17.5" r="0.85"></circle>
+        <circle cx="12.5" cy="21" r="0.85"></circle>
+        <circle cx="15.5" cy="21" r="0.85"></circle>
+        <circle cx="14" cy="24.5" r="0.75"></circle>
+      </g>
+    </svg>
+    <span class="nav-logo-text">
+      <span class="nav-logo-ja">山崎農園</span>
+      <span class="nav-logo-en">Yamazaki Farm</span>
+    </span>
+  </a>
+  <!-- Desktop inline nav -->
+  <ul class="nav-links" aria-label="グローバルナビゲーション">
+    <li><a href="../tochiaika/tochiaika.html">とちあいかの魅力</a></li>
+    <li><a href="../cultivation/cultivation.html">こだわりの栽培</a></li>
+    <li><a href="./chokubaijo.html" class="active" aria-current="page">直売所</a></li>
+    <li><a href="../recruit/recruit.html">採用情報</a></li>
+    <li><a href="../index.html#contact">お問い合わせ</a></li>
+  </ul>
+
+  <!-- Mobile hamburger button -->
+  <button class="nav-hamburger" id="navHamburger" type="button" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
+    <span class="ham-line"></span>
+    <span class="ham-line"></span>
+    <span class="ham-line"></span>
+  </button>
+</nav>
+
+<!-- ========== MOBILE MENU ========== -->
+<div id="mobileMenuBackdrop" aria-hidden="true"></div>
+<aside id="mobileMenu" aria-hidden="true" role="dialog" aria-label="ナビゲーションメニュー">
+
+  <!-- ヘッダー行 -->
+  <div class="mm-header-row">
+    <div class="mm-header-left">
+      <span class="mm-header-label">MENU</span>
+      <span class="mm-header-line"></span>
+      <span class="mm-header-brand">YAMAZAKI FARM</span>
+    </div>
+    <button class="mm-close-btn" id="mobileMenuClose" aria-label="メニューを閉じる"></button>
+  </div>
+
+  <!-- ナビリスト -->
+  <ul class="mm-nav-list">
+    <li><a href="../index.html"              data-menu-link><span class="mm-n">00</span>ホーム</a></li>
+    <li><a href="../tochiaika/tochiaika.html"  data-menu-link><span class="mm-n">01</span>とちあいかの魅力</a></li>
+    <li><a href="../cultivation/cultivation.html" data-menu-link><span class="mm-n">02</span>こだわりの栽培</a></li>
+    <li><a href="./chokubaijo.html" class="mm-current" data-menu-link><span class="mm-n">03</span>直売所</a></li>
+    <li><a href="../recruit/recruit.html"             data-menu-link><span class="mm-n">04</span>採用情報</a></li>
+  </ul>
+
+  <!-- ブランドロゴ -->
+  <div class="mm-brand-visual">
+    <img src="yamazaki_logo_chars.png" alt="苺のやまざき YAMAZAKI FARM" loading="lazy">
+  </div>
+
+  <!-- 電話番号 -->
+  <a href="tel:09041214132" class="mm-tel-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.13.96.34 1.9.61 2.81a2 2 0 0 1-.45 2.11L7.09 8.75a16 16 0 0 0 6 6l1.11-1.11a2 2 0 0 1 2.11-.45c.91.27 1.85.48 2.81.61A2 2 0 0 1 21 16.92z"/>
+    </svg>
+    <div class="mm-tel-body">
+      <span class="mm-tel-label">お電話でのお問い合わせ</span>
+      <span class="mm-tel-num">090-4121-4132</span>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="mm-ig-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+    @ichigo_no_yamazaki
+  </a>
+
+</aside>
+
+<!-- ① HERO -->
+<section id="hero" data-screen-label="01 Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Morning Picked Strawberry</div>
+    <h1 class="hero-title">
+      <em>Direct Sales</em>
+      朝採り直売所
+    </h1>
+    <p class="hero-sub">
+      朝採りした<strong>新鮮ないちご</strong>を、<br>
+      完全予約制で販売しております。
+    </p>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ② 直売所について -->
+<section id="about-shop" data-screen-label="02 About">
+  <div class="container text-center">
+    <div class="reveal">
+      <span class="sec-label">About the Farm Shop</span>
+      <h2 class="sec-title">朝採りいちごを、<br>一番美味しい<em>瞬間</em>でお渡しするために。</h2>
+      <div class="sec-divider center"></div>
+    </div>
+
+    <div class="about-quote-card reveal reveal-d1">
+      <p>
+        山崎農園では、<br>
+        朝採りした<em>とちあいか</em>を<br>
+        一番美味しい状態でお渡しできるよう、<br>
+        <em>完全予約制</em>で販売しております。
+      </p>
+      <span class="about-quote-attr">— Yamazaki Farm Promise</span>
+    </div>
+
+    <ul class="feat-grid">
+      <li class="feat-card reveal reveal-d1">
+        <span class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </span>
+        <div class="feat-card-body">
+          <h4>朝採りいちご</h4>
+          <p>その日の早朝、ひと粒ひと粒手摘みしたとちあいかをお渡しします。</p>
+        </div>
+      </li>
+      <li class="feat-card reveal reveal-d2">
+        <span class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+        </span>
+        <div class="feat-card-body">
+          <h4>完全予約制</h4>
+          <p>ご予約いただいた分だけを朝に収穫。混雑なく、丁寧にお渡しできます。</p>
+        </div>
+      </li>
+      <li class="feat-card reveal reveal-d2">
+        <span class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </span>
+        <div class="feat-card-body">
+          <h4>新鮮な状態でお渡し</h4>
+          <p>収穫から最短でお引き渡し。香りも甘さも、もっとも豊かなままに。</p>
+        </div>
+      </li>
+      <li class="feat-card reveal reveal-d3">
+        <span class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+        </span>
+        <div class="feat-card-body">
+          <h4>贈答用にも対応</h4>
+          <p>大切な方への贈り物として。包装やのし掛けにも対応いたします。</p>
+        </div>
+      </li>
+      <li class="feat-card reveal reveal-d3" style="grid-column: 1/-1;">
+        <span class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"></rect><path d="M16 8h4l3 5v3h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </span>
+        <div class="feat-card-body">
+          <h4>全国発送可能</h4>
+          <p>遠方の方へも、朝採りいちごを丁寧に梱包して全国にお届けいたします。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ③ 商品ラインナップ -->
+<section id="products" data-screen-label="03 Products">
+  <div class="container">
+    <div class="products-head reveal">
+      <span class="sec-label">Our Strawberry Box</span>
+      <h2 class="sec-title">商品ラインナップ</h2>
+      <div class="sec-divider center"></div>
+      <p>贈答用にも、ご家庭用にも。<br>用途に合わせて2種類のパックをご用意しております。</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- 商品① -->
+      <article class="product-card reveal reveal-d1">
+        <div class="product-img">
+          <img src="./ichigo10.jpeg" alt="平詰めパック 2P 大粒とちあいか">
+          <span class="product-badge">For Gift — 贈答用</span>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">No.01 / Flat Pack</span>
+          <h3 class="product-name">
+            平詰めパック 1箱
+            <small>FLAT PACK / 2 PACKS</small>
+          </h3>
+          <div class="product-price">
+            <span class="yen">¥</span>
+            <span class="num" style="font-family: Merriweather">1,600</span>
+            <span class="tax">税込</span>
+          </div>
+          <ul class="product-specs">
+            <li><span class="k">Quantity</span><span class="v">1箱 / 2パック入り</span></li>
+            <li><span class="k">Weight</span><span class="v">1パック 約 290g</span></li>
+            <li><span class="k">Size</span><span class="v">大粒 / 1パック 5〜7粒</span></li>
+          </ul>
+          <div class="product-tags">
+            <span class="product-tag">大粒</span>
+            <span class="product-tag">贈答用おすすめ</span>
+            <span class="product-tag green">化粧箱対応</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 商品② -->
+      <article class="product-card reveal reveal-d2">
+        <div class="product-img">
+          <img src="./strawberry3.jpg" alt="レギュラーパック 4P とちあいか">
+          <span class="product-badge">For Home — ご家庭用</span>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">No.02 / Regular Pack</span>
+          <h3 class="product-name">
+            レギュラーパック 1箱
+            <small>REGULAR PACK / 4 PACKS</small>
+          </h3>
+          <div class="product-price">
+            <span class="yen">¥</span>
+            <span class="num" style="font-family: Merriweather">2,600</span>
+            <span class="tax">税込</span>
+          </div>
+          <ul class="product-specs">
+            <li><span class="k">Quantity</span><span class="v">1箱 / 4パック入り</span></li>
+            <li><span class="k">Weight</span><span class="v">1パック 約 260g</span></li>
+            <li><span class="k">Size</span><span class="v">1パック 8〜9粒</span></li>
+          </ul>
+          <div class="product-tags">
+            <span class="product-tag">ご家庭用人気</span>
+            <span class="product-tag">たっぷり4P</span>
+            <span class="product-tag green">贈答対応可能</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ④ ご予約方法 -->
+<section id="reservation" data-screen-label="04 Reservation">
+  <div class="container text-center">
+    <div class="reveal">
+      <span class="sec-label">How to Reserve</span>
+      <h2 class="sec-title">ご予約方法</h2>
+      <div class="sec-divider center"></div>
+      <p style="font-size:14px;color:var(--text-mid);line-height:2;max-width:540px;margin:0 auto;">
+        ご予約は3ステップで完了します。<br>
+        やさしく、ゆっくり、お気軽にどうぞ。
+      </p>
+    </div>
+
+    <div class="steps-wrap">
+      <div class="step-card reveal reveal-d1">
+        <div class="step-num">Step<strong>01</strong></div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </div>
+        <h3 class="step-title">ご連絡</h3>
+        <p class="step-text">Instagram DM または<br>お問い合わせフォームより<br>お気軽にご連絡ください。</p>
+      </div>
+
+      <div class="step-card reveal reveal-d2">
+        <div class="step-num">Step<strong>02</strong></div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </div>
+        <h3 class="step-title">日時のご相談</h3>
+        <p class="step-text">受け取り日時を<br>ご都合に合わせて<br>ご相談いたします。</p>
+      </div>
+
+      <div class="step-card reveal reveal-d3">
+        <div class="step-num">Step<strong>03</strong></div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <h3 class="step-title">農園で受け取り</h3>
+        <p class="step-text">当日朝に収穫した<br>新鮮ないちごを<br>農園にてお渡しいたします。</p>
+      </div>
+    </div>
+
+    <div class="reservation-cta reveal">
+      <p>最新の収穫状況・営業のご案内は<br>Instagram・LINE よりご確認ください。</p>
+      <div class="reservation-btns">
+        <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="btn-ig">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram DM でご予約
+        </a>
+        <a href="https://lin.ee/svIRx5c" target="_blank" rel="noopener" class="btn-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          LINE DM でご予約
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 全国発送 -->
+<section id="shipping" data-screen-label="05 Shipping">
+  <div class="container">
+    <div class="shipping-inner">
+      <div class="shipping-img reveal-left">
+        <img src="./kodawari5.jpg" alt="梱包されたいちご">
+        <span class="shipping-img-tag">— Nationwide Delivery</span>
+      </div>
+      <div class="shipping-body reveal-right">
+        <span class="sec-label">Nationwide Shipping</span>
+        <h2 class="sec-title">全国発送、<br>承っております。</h2>
+        <div class="sec-divider"></div>
+        <p class="lead">
+          遠方にお住まいの方や、大切な方への贈り物として。<br>
+          朝採りしたいちごを丁寧に梱包し、全国へお届けいたします。日時のご指定も承ります。
+        </p>
+        <ul class="ship-features">
+          <li>ご自宅用</li>
+          <li>贈答用に対応</li>
+          <li>日時指定可能</li>
+          <li>朝採りそのまま発送</li>
+        </ul>
+        <p class="shipping-note">
+          ※発送日や配送地域により到着時間は前後する場合がございます。<br>
+          詳細はお気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 直売所情報 -->
+<section id="shop-info" data-screen-label="06 Shop Info">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="sec-label">Farm Shop Information</span>
+      <h2 class="sec-title">直売所情報</h2>
+      <div class="sec-divider center"></div>
+    </div>
+
+    <div class="info-card reveal reveal-d1">
+      <div class="info-map">
+        <iframe
+  src="https://www.google.com/maps?q=%E8%8B%BA%E3%81%AE%E3%82%84%E3%81%BE%E3%81%96%E3%81%8D%20%E5%B1%B1%E5%B4%8E%E8%BE%B2%E5%9C%92%20%E6%A0%83%E6%9C%A8%E7%9C%8C%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%E9%87%9D%E3%83%B6%E8%B0%B7%E7%94%BA239-1&output=embed"
+  width="100%"
+  height="360"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="山崎農園 Googleマップ">
+</iframe>
+      </div>
+      <div class="info-body">
+        <div class="info-row">
+          <span class="k">Address</span>
+          <span class="v">〒321-0147<br>栃木県宇都宮市針ヶ谷町239-1<small>カーナビ・Google Mapにて検索可能</small></span>
+        </div>
+        <div class="info-row">
+          <span class="k">Hours</span>
+          <span class="v">9:00 〜 16:00<small>朝採り完売時は早めに終了いたします</small></span>
+        </div>
+        <div class="info-row">
+          <span class="k">Reservation</span>
+          <span class="v">完全予約制<small>一番美味しい状態でお渡しするため</small></span>
+        </div>
+        <div class="info-row">
+          <span class="k">Parking</span>
+          <span class="v">無料駐車場あり<small>農園敷地内に3〜4台分の駐車スペースをご用意</small></span>
+        </div>
+        <div class="info-cta-row">
+          <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Google Map で開く
+          </a>
+          <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"></rect><path d="M16 8h4l3 5v3h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            カーナビで開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ FAQ -->
+<section id="faq" data-screen-label="07 FAQ">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="sec-label">Frequently Asked Questions</span>
+      <h2 class="sec-title">よくあるご質問</h2>
+      <div class="sec-divider center"></div>
+    </div>
+
+    <div class="faq-list reveal reveal-d1">
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span class="q-mark">Q.</span>
+          <span class="q-text">当日購入できますか？</span>
+          <span class="q-toggle" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="a-mark">A.</span>
+            <p>当日午前中までにご予約をお願いいたします。一番美味しい状態でお渡しするため、ご予約いただいた分のみを朝に収穫しています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span class="q-mark">Q.</span>
+          <span class="q-text">発送はできますか？</span>
+          <span class="q-toggle" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="a-mark">A.</span>
+            <p>全国発送を承っております。日時のご指定や、贈答用としてのお届け先指定にも対応しております。お気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span class="q-mark">Q.</span>
+          <span class="q-text">贈答用にできますか？</span>
+          <span class="q-toggle" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="a-mark">A.</span>
+            <p>贈答用としてもご利用いただけます。平詰めパックは粒の揃った大粒のいちごをお詰めしており、化粧箱でのお渡し・のし掛けにも対応いたします。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span class="q-mark">Q.</span>
+          <span class="q-text">予約はどのくらい前にすればよいですか？</span>
+          <span class="q-toggle" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="a-mark">A.</span>
+            <p>収穫状況により異なりますが、当日午前中までにご連絡いただけますと幸いです。お急ぎの場合もお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-logo">山崎農園</div>
+  <div class="foot-sub">Yamazaki Farm — Tochigi, Japan</div>
+  <a href="../index.html" class="foot-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+    トップへ戻る
+  </a>
+  <span class="foot-copy">© 2025 山崎農園 All Rights Reserved.</span>
+</footer>
+
+<!-- BACK TO TOP -->
+<!-- フローティング お問い合わせボタン -->
+<a href="../index.html#contact" class="fab-contact" id="fabContact" aria-label="お問い合わせへ移動">
+  <span class="fab-contact-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+      <path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+    </svg>
+  </span>
+  <span class="fab-contact-text">お問い合わせ</span>
+</a>
+
+<a href="#hero" class="back-top" id="backTop" aria-label="ページトップへ戻る">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"></path></svg>
+</a>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('main-nav');
+  const back = document.getElementById('backTop');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    back.classList.toggle('show', window.scrollY > 500);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll (subtle)
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const a = item.querySelector('.faq-a');
+      const open = item.classList.toggle('open');
+      if (open) {
+        a.style.maxHeight = a.scrollHeight + 'px';
+      } else {
+        a.style.maxHeight = null;
+      }
+    });
+  });
+
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 40, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ===== Mobile Hamburger Menu =====
+  (function() {
+    const ham      = document.getElementById('navHamburger');
+    const menu     = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    const closeBtn = document.getElementById('mobileMenuClose');
+    if (!ham || !menu || !backdrop) return;
+
+    let savedScrollY = 0;
+    let isOpen = false;
+
+    function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+      savedScrollY = window.scrollY || 0;
+      document.body.style.top = '-' + savedScrollY + 'px';
+      document.body.classList.add('menu-open');
+      menu.classList.add('is-open');
+      backdrop.classList.add('is-open');
+      ham.classList.add('is-active');
+      ham.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
+    }
+    function closeMenu() {
+      if (!isOpen) return;
+      isOpen = false;
+      menu.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      ham.classList.remove('is-active');
+      ham.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY);
+    }
+
+    ham.addEventListener('click', function() {
+      if (isOpen) closeMenu(); else openMenu();
+    });
+    closeBtn && closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) closeMenu();
+    });
+
+    menu.querySelectorAll('a[data-menu-link]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        const href = a.getAttribute('href') || '';
+        if (href.charAt(0) !== '#') {
+          closeMenu();
+          return;
+        }
+        e.preventDefault();
+        const target = document.querySelector(href);
+        closeMenu();
+        setTimeout(function() {
+          if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset, behavior: 'smooth' });
+        }, 180);
+      });
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 901 && isOpen) closeMenu();
+    });
+  })();
+
+  // ===== フローティングお問い合わせボタン =====
+  (function() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    function update() {
+      const y = window.scrollY || 0;
+      if (y > 140) fab.classList.add('is-visible');
+      else fab.classList.remove('is-visible');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>
