@@ -171,7 +171,7 @@
     <h1 class="hero-title">
       いちご王国・栃木から、<br><span>最高の一粒</span>を。
     </h1>
-    <p class="hero-sub">朝採りの新鮮ないちごを、まっすぐにお届けします</p>
+    <p class="hero-sub">いちばん美味しい“完熟の瞬間”を農園からダイレクトにお届けします。</p>
     <a href="#shop" class="btn-primary">
       <span>購入方法を見る</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -223,7 +223,7 @@
 
       <!-- とちあいか詳細ページへのリンクボタン -->
       <div style="margin-top: 44px; text-align: center;">
-        <a href="./とちあいかの魅力/tochiaika.html" class="btn-cultivation-detail">
+        <a href="./tochiaika/tochiaika.html" class="btn-cultivation-detail">
           <span>とちあいかの魅力を詳しく見る</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -278,7 +278,7 @@
 
       <!-- 詳細ページへのリンクボタン -->
       <div style="margin-top: 44px; text-align: center;">
-        <a href="./栽培へのこだわり/cultivation.html" class="btn-cultivation-detail">
+        <a href="./cultivation/cultivation.html" class="btn-cultivation-detail">
           <span>栽培へのこだわりを詳しく見る</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -315,11 +315,6 @@
           <span class="story-tag">地域への貢献</span>
         </div>
       </div>
-
-      <!-- 右：キャラクター（Canvas で黒背景除去） -->
-      <div class="story-character-col" aria-hidden="true">
-        <canvas id="storyCharacterCanvas" class="story-character-canvas"></canvas>
-      </div>
     </div>
   </div>
 </section>
@@ -350,12 +345,15 @@
       <div class="reveal shop-card shop-card--map">
         <div class="shop-card-map-frame">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3208.0965243834203!2d139.85532017562969!3d36.47938467234037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f5ccc5287a1f1%3A0x1053ba8e6ff1ab79!2z44CSMzIxLTAxNDcg5qCD5pyo55yM5a6H6YO95a6u5biC6Yed44Kx6LC355S677yS77yT77yZ!5e0!3m2!1sja!2sjp!4v1778134244997!5m2!1sja!2sjp"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="山崎農園マップ">
-          </iframe>
+  src="https://www.google.com/maps?q=%E8%8B%BA%E3%81%AE%E3%82%84%E3%81%BE%E3%81%96%E3%81%8D%20%E5%B1%B1%E5%B4%8E%E8%BE%B2%E5%9C%92%20%E6%A0%83%E6%9C%A8%E7%9C%8C%E5%AE%87%E9%83%BD%E5%AE%AE%E5%B8%82%E9%87%9D%E3%83%B6%E8%B0%B7%E7%94%BA239-1&output=embed"
+  width="100%"
+  height="360"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="山崎農園 Googleマップ">
+</iframe>
         </div>
         <div class="shop-card-map-body">
           <div class="shop-card-address-row">
@@ -370,11 +368,11 @@
             </div>
           </div>
           <div class="shop-card-map-btns">
-            <a href="https://maps.google.com/?q=栃木県宇都宮市針ヶ谷町239-1" target="_blank" rel="noopener" class="btn-map-primary">
+            <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map-primary">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Google Mapで開く
             </a>
-            <a href="https://maps.google.com/?q=栃木県宇都宮市針ヶ谷町239-1&amp;travelmode=driving" target="_blank" rel="noopener" class="btn-map-secondary">
+            <a href="https://maps.app.goo.gl/XkfUUkRdaidzKCjj6?g_st=al" target="_blank" rel="noopener" class="btn-map-secondary">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               カーナビで開く
             </a>
@@ -417,7 +415,7 @@
       </div>
 
       <!-- ③ 人気の朝採りいちごカード（直売所詳細ページへの導線） -->
-      <a href="./朝採り直売所/chokubaijo.html" class="reveal shop-card shop-card--product">
+      <a href="./shop/chokubaijo.html" class="reveal shop-card shop-card--product">
         <div class="shop-product-photo">
           <img src="./ichigo.jpg" alt="朝採りとちあいか" loading="lazy">
           <span class="shop-product-fresh-tag">
@@ -528,7 +526,7 @@
 
     <!-- 直売所詳細ページへの自然な導線 -->
     <div class="reveal shop-lineup-cta">
-      <a href="./朝採り直売所/chokubaijo.html" class="btn-cultivation-detail">
+      <a href="./shop/chokubaijo.html" class="btn-cultivation-detail">
         <span>朝採りいちごの詳細ページを見る</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -561,7 +559,7 @@
           農業が初めての方でも、<br class="sp-br">丁寧にサポートしています。
         </p>
 
-        <a href="./採用情報/recruit.html" class="btn-cultivation-detail">
+        <a href="./recruit/recruit.html" class="btn-cultivation-detail">
           <span>山崎農園で働くについて見る</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
