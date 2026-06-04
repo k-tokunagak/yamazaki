@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>とちあいかの魅力 | 山崎農園</title>
+  <meta name="description" content="栃木県が10年以上の歳月をかけて開発したオリジナル品種「とちあいか」。甘さ、やさしさ、美しさ。みんなを笑顔にするいちごの魅力をご紹介します。">
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="tochiaika.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION（既存サイトと完全に同じパターン）
+       ============================================================ -->
+  <nav id="main-nav">
+    <a href="../index.html" class="nav-logo">
+      <!-- いちごSVGロゴ（既存サイトと統一） -->
+      <svg class="nav-logo-icon" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="nav-berry" x1="10" y1="10" x2="18" y2="28" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#FF6B7A"/>
+            <stop offset="45%"  stop-color="#E60033"/>
+            <stop offset="100%" stop-color="#B8001F"/>
+          </linearGradient>
+          <radialGradient id="nav-shine" cx="38%" cy="28%" r="38%">
+            <stop offset="0%"  stop-color="#fff" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="nav-hull" x1="14" y1="6" x2="14" y2="13" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"  stop-color="#68D391"/>
+            <stop offset="100%" stop-color="#2F855A"/>
+          </linearGradient>
+        </defs>
+        <g opacity="0.92">
+          <path d="M14 11.5C14 11.5 13.5 7.5 14 5.5C14.5 7.5 14 11.5 14 11.5Z" fill="url(#nav-hull)"/>
+          <path d="M14 11C14 11 10.5 8.5 9.5 6.5C11.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"/>
+          <path d="M14 11C14 11 17.5 8.5 18.5 6.5C16.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"/>
+          <path d="M13.5 11.5C13.5 11.5 9 10 7.5 8.5C9.5 9 13.5 11.5 13.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"/>
+          <path d="M14.5 11.5C14.5 11.5 19 10 20.5 8.5C18.5 9 14.5 11.5 14.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"/>
+        </g>
+        <path d="M14 12C9.5 12 6 15.5 6.5 20C7 24 10.5 28.5 14 29C17.5 28.5 21 24 21.5 20C22 15.5 18.5 12 14 12Z" fill="url(#nav-berry)"/>
+        <ellipse cx="11.5" cy="18" rx="3.5" ry="4.5" fill="url(#nav-shine)"/>
+        <g fill="rgba(255,255,255,0.55)">
+          <circle cx="11.5" cy="17.5" r="0.85"/>
+          <circle cx="14"   cy="15.5" r="0.85"/>
+          <circle cx="16.5" cy="17.5" r="0.85"/>
+          <circle cx="12.5" cy="21"   r="0.85"/>
+          <circle cx="15.5" cy="21"   r="0.85"/>
+          <circle cx="14"   cy="24.5" r="0.75"/>
+        </g>
+      </svg>
+      <span class="nav-logo-text">
+        <span class="nav-logo-ja">山崎農園</span>
+        <span class="nav-logo-en">YAMAZAKI FARM</span>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="tochiaika.html" class="is-current">とちあいかの魅力</a></li>
+      <li><a href="../cultivation/cultivation.html">こだわりの栽培</a></li>
+      <li><a href="../shop/chokubaijo.html">直売所</a></li>
+      <li><a href="../recruit/recruit.html">採用情報</a></li>
+    </ul>
+
+    <a href="../index.html#contact" class="nav-contact">お問い合わせ</a>
+
+    <button class="nav-hamburger" id="navHamburger" type="button" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+<!-- モバイルメニュー（ハンバーガー展開） -->
+<div id="mobileMenuBackdrop" aria-hidden="true"></div>
+<aside id="mobileMenu" aria-hidden="true" role="dialog" aria-label="ナビゲーションメニュー">
+
+  <!-- ヘッダー行 -->
+  <div class="mm-header-row">
+    <div class="mm-header-left">
+      <span class="mm-header-label">MENU</span>
+      <span class="mm-header-line"></span>
+      <span class="mm-header-brand">YAMAZAKI FARM</span>
+    </div>
+    <button class="mm-close-btn" id="mobileMenuClose" aria-label="メニューを閉じる"></button>
+  </div>
+
+  <!-- ナビリスト -->
+  <ul class="mm-nav-list">
+    <li><a href="../index.html"                          data-menu-link><span class="mm-n">00</span>ホーム</a></li>
+    <li><a href="./tochiaika.html" class="mm-current"    data-menu-link><span class="mm-n">01</span>とちあいかの魅力</a></li>
+    <li><a href="../cultivation/cultivation.html"   data-menu-link><span class="mm-n">02</span>こだわりの栽培</a></li>
+    <li><a href="../shop/chokubaijo.html"        data-menu-link><span class="mm-n">03</span>直売所</a></li>
+    <li><a href="../recruit/recruit.html"               data-menu-link><span class="mm-n">04</span>採用情報</a></li>
+  </ul>
+
+  <!-- ブランドロゴ -->
+  <div class="mm-brand-visual">
+    <img src="yamazaki_logo_chars.png" alt="苺のやまざき YAMAZAKI FARM" loading="lazy">
+  </div>
+
+  <!-- 電話番号 -->
+  <a href="tel:09041214132" class="mm-tel-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.13.96.34 1.9.61 2.81a2 2 0 0 1-.45 2.11L7.09 8.75a16 16 0 0 0 6 6l1.11-1.11a2 2 0 0 1 2.11-.45c.91.27 1.85.48 2.81.61A2 2 0 0 1 21 16.92z"/>
+    </svg>
+    <div class="mm-tel-body">
+      <span class="mm-tel-label">お電話でのお問い合わせ</span>
+      <span class="mm-tel-num">090-4121-4132</span>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="mm-ig-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+    @ichigo_no_yamazaki
+  </a>
+
+</aside>
+<!-- ============================================================
+       ① HERO（ファーストビュー）
+       ============================================================ -->
+  <section class="hero">
+
+    <!-- 背景写真レイヤー（画像差し替え推奨: いちごの大きな写真） -->
+    <div class="hero-bg" aria-hidden="true">
+      <img src="./tochiaika_hero.png" alt="">
+    </div>
+
+    <div class="hero-grid">
+
+      <div class="hero-text reveal">
+        <div class="hero-vertical-label">TOCHIAIKA</div>
+        <h1 class="hero-title">
+          とちあいかの<br>
+          <span class="accent">魅力</span>
+        </h1>
+        <p class="hero-sub">
+          甘さ、やさしさ、美しさ。<br>
+          とちあいかは、みんなを笑顔にするいちごです。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ② とちあいかとは（紹介セクション）
+       ============================================================ -->
+  <section class="intro">
+    <div class="intro-grid">
+
+      <div class="intro-text reveal">
+        <h2 class="intro-heading">
+          栃木県が生んだ、<br>
+          自慢のいちご<span class="quote">「とちあいか」</span>
+        </h2>
+        <div class="intro-desc">
+          <p>「とちあいか」は、栃木県が10年以上の歳月をかけて開発したオリジナル品種。</p>
+          <p>甘さが際立ち、酸味は控えめで、みずみずしくジューシー。見た目も美しく、食べる人の心をきゅんとさせます。</p>
+          <p>山崎農園では、この特別ないちごを、愛情を込めて丁寧に育てています。</p>
+        </div>
+      </div>
+
+      <div class="intro-images reveal reveal-delay-1">
+        <div class="intro-img-main">
+          <!-- 画像差し替え推奨: ハウスでとちあいかが実っている写真 -->
+          <img src="./tochiaika_character.png" alt="ハウスで実るとちあいか">
+        </div>
+    
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ③ 4つの特徴（特徴セクション）
+       ============================================================ -->
+  <section class="features">
+
+    <div class="features-head reveal">
+      <h2 class="features-head-title">
+        とちあいかの<span class="num">4</span>つの特徴
+      </h2>
+      <span class="features-head-en">— Features —</span>
+    </div>
+
+    <div class="features-grid">
+
+      <!-- 01 圧倒的な甘さ -->
+      <article class="feature-card reveal reveal-delay-1">
+        <div class="feature-top">
+          <span class="feature-num">01</span>
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 16L3 5l5.5 4L12 4l3.5 5L21 5l-2 11"/>
+            <path d="M5 16h14v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">圧倒的な甘さ</h3>
+        <p class="feature-text">
+          糖度が高く、口に入れた瞬間に広がる濃厚な甘さ。<br>
+          一度食べたら忘れられません。
+        </p>
+        <div class="feature-img">
+          <!-- 画像差し替え推奨: 真っ赤に熟したとちあいかの実 -->
+          <img src="./ichigo4.png" alt="圧倒的な甘さのとちあいか">
+        </div>
+      </article>
+
+      <!-- 02 酸味が少なく食べやすい -->
+      <article class="feature-card reveal reveal-delay-2">
+        <div class="feature-top">
+          <span class="feature-num">02</span>
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">酸味が少なく食べやすい</h3>
+        <p class="feature-text">
+          酸味が控えめで、<br>
+          お子さまから大人まで<br>
+          やさしい味わい。
+        </p>
+        <div class="feature-img">
+          <!-- 画像差し替え推奨: ハーフカット断面写真 -->
+          <img src="./ichigo5.png" alt="ハーフカットのとちあいか">
+        </div>
+      </article>
+
+      <!-- 03 ハート型の可愛らしさ -->
+      <article class="feature-card reveal reveal-delay-3">
+        <div class="feature-top">
+          <span class="feature-num">03</span>
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">ハート型の可愛らしさ</h3>
+        <p class="feature-text">
+          断面がハート型で見た目も可愛く、<br>
+          贈り物にもぴったりです。
+        </p>
+        <div class="feature-img">
+          <!-- 画像差し替え推奨: ハート型の断面が美しいいちご -->
+          <img src="./ichigo6.png" alt="ハート型断面のとちあいか">
+        </div>
+      </article>
+
+      <!-- 04 みずみずしく日持ちする -->
+      <article class="feature-card reveal reveal-delay-4">
+        <div class="feature-top">
+          <span class="feature-num">04</span>
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2.5s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">みずみずしく日持ちする</h3>
+        <p class="feature-text">
+          果肉がしっかりしていて<br>
+          みずみずしく、日持ちも良いのが<br>
+          嬉しいポイント。
+        </p>
+        <div class="feature-img">
+          <!-- 画像差し替え推奨: 複数並んだとちあいかの実 -->
+          <img src="./ichigo7.png" alt="みずみずしいとちあいか">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ④ 農園のこだわり（エディトリアル風・写真なし）
+       ============================================================ -->
+  <section class="grower">
+
+    <!-- 背景の超大型イタリック文字 -->
+    <div class="grower-bg-text" aria-hidden="true">Cultivated with Love</div>
+
+    <!-- 右上の装飾SVG：いちごと葉の小さなブーケ -->
+    <svg class="grower-deco-tr" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- 葉 -->
+      <path d="M40 80 Q20 60 25 30 Q45 45 55 70 Z" fill="#9ACA9A" opacity="0.75"/>
+      <path d="M75 75 Q95 55 90 25 Q70 40 60 65 Z" fill="#7FB67F" opacity="0.75"/>
+      <path d="M55 95 Q40 110 25 105 Q35 85 55 80 Z" fill="#A8D4A8" opacity="0.6"/>
+      <!-- 花びら -->
+      <g transform="translate(60, 70)">
+        <ellipse cx="0"   cy="-18" rx="9" ry="13" fill="#fff" stroke="#F5E8E8" stroke-width="0.5"/>
+        <ellipse cx="17"  cy="-5"  rx="9" ry="13" fill="#fff" stroke="#F5E8E8" stroke-width="0.5" transform="rotate(72 17 -5)"/>
+        <ellipse cx="10"  cy="16"  rx="9" ry="13" fill="#fff" stroke="#F5E8E8" stroke-width="0.5" transform="rotate(144 10 16)"/>
+        <ellipse cx="-10" cy="16"  rx="9" ry="13" fill="#fff" stroke="#F5E8E8" stroke-width="0.5" transform="rotate(216 -10 16)"/>
+        <ellipse cx="-17" cy="-5"  rx="9" ry="13" fill="#fff" stroke="#F5E8E8" stroke-width="0.5" transform="rotate(288 -17 -5)"/>
+        <circle cx="0" cy="0" r="5" fill="#F5C842"/>
+      </g>
+      <!-- 小さなとちあいか -->
+      <path d="M88 105 Q82 100 82 110 Q82 122 92 125 Q102 122 102 110 Q102 100 96 105 Z" fill="#E60033" opacity="0.88"/>
+      <path d="M88 105 L92 96 L96 105 Z" fill="#68D391"/>
+    </svg>
+
+    <!-- 左下の装飾SVG：小さないちごと葉 -->
+    <svg class="grower-deco-bl" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- 葉 -->
+      <path d="M20 60 Q10 45 15 25 Q30 35 38 55 Z" fill="#9ACA9A" opacity="0.7"/>
+      <path d="M60 55 Q70 40 65 20 Q50 30 45 50 Z" fill="#7FB67F" opacity="0.7"/>
+      <!-- 大きないちご -->
+      <g transform="translate(0, 5)">
+        <path d="M40 75 Q30 70 30 82 Q30 100 45 105 Q60 100 60 82 Q60 70 50 75 Z" fill="#E60033"/>
+        <path d="M40 75 L45 60 L50 75 Z" fill="#68D391"/>
+        <!-- 種 -->
+        <circle cx="38" cy="85" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="45" cy="88" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="52" cy="85" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="42" cy="93" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="48" cy="95" r="1" fill="#fff" opacity="0.6"/>
+      </g>
+    </svg>
+
+    <div class="grower-editorial">
+
+      <!-- 上部アイブロウ -->
+      <div class="grower-eyebrow reveal">
+        <span class="grower-eyebrow-line"></span>
+        <span class="grower-eyebrow-text">CULTIVATED WITH LOVE</span>
+        <span class="grower-eyebrow-line"></span>
+      </div>
+
+      <div class="grower-subtitle reveal">山崎農園のとちあいか</div>
+
+      <!-- メイン見出し（大型明朝） -->
+      <h2 class="grower-headline reveal reveal-delay-1">
+        <span class="accent">愛情</span>を込めて、<br>
+        丁寧に育てています。
+      </h2>
+
+      <!-- 引用風本文ブロック -->
+      <div class="grower-quote reveal reveal-delay-2">
+        <span class="grower-quote-mark left">&ldquo;</span>
+        <span class="grower-quote-mark right">&ldquo;</span>
+        <p>朝採りの新鮮ないちごを、その日のうちに皆さまへ。<br>一粒一粒を丁寧に選別し、品質にもこだわっています。</p>
+        <p><em>「美味しい！」</em>の笑顔のために、<br>これからも真心を込めて育て続けます。</p>
+      </div>
+
+      <!-- 3つのアイコンポイント -->
+      <div class="grower-points reveal reveal-delay-3">
+        <div class="grower-point">
+          <div class="grower-point-icon">
+            <!-- 朝採りで新鮮（朝日アイコン） -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+          </div>
+          <div class="grower-point-label">朝採りで新鮮</div>
+        </div>
+        <div class="grower-point">
+          <div class="grower-point-icon">
+            <!-- 丁寧な選別（目アイコン） -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="grower-point-label">丁寧な選別</div>
+        </div>
+        <div class="grower-point">
+          <div class="grower-point-icon">
+            <!-- 安心・安全の栽培（盾アイコン） -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="grower-point-label">安心・安全の栽培</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ⑤ CTA（行動喚起セクション）
+       ============================================================ -->
+  <section class="cta">
+
+    <!-- 左の装飾画像（白い花やかご） -->
+    <div class="cta-deco-left" aria-hidden="true">
+      <!-- 画像差し替え推奨: 白い花や葉などのナチュラルな装飾画像 -->
+      <img src="./ichigo1.png" alt="">
+    </div>
+
+    <!-- 右の装飾画像（かごに入ったいちご） -->
+    <div class="cta-deco-right" aria-hidden="true">
+      <!-- 画像差し替え推奨: かごに入ったとちあいか -->
+      <img src="./ichigo2.png" alt="">
+    </div>
+
+    <div class="cta-inner reveal">
+      <div class="cta-label">山崎農園のとちあいかを</div>
+      <h2 class="cta-heading">ぜひ味わってみてください</h2>
+      <div class="cta-buttons">
+        <a href="../shop/chokubaijo.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          直売所を見る
+        </a>
+        <a href="../index.html#contact" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        山崎農園
+        <small>YAMAZAKI FARM · TOCHIGI, JAPAN</small>
+      </div>
+      <div class="copyright">© 2026 YAMAZAKI FARM. ALL RIGHTS RESERVED.</div>
+    </div>
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-top" id="backTop" aria-label="ページトップへ戻る">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+
+  <!-- フローティング お問い合わせボタン（スマホ用） -->
+  <a href="../index.html#contact" class="fab-contact" id="fabContact" aria-label="お問い合わせへ移動">
+    <span class="fab-contact-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+        <path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+      </svg>
+    </span>
+    <span class="fab-contact-text">お問い合わせ</span>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="tochiaika.js"></script>
+
+</body>
+</html>

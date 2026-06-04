@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | 山崎農園</title>
+  <meta name="description" content="山崎農園では、いちごの収穫・栽培管理・直売所での接客などを一緒に支えてくれる仲間を募集しています。未経験の方でも、一つずつ丁寧にお教えします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-base.css">
+  <link rel="stylesheet" href="recruit.css">
+</head>
+<body>
+
+<!-- FLOATING STRAWBERRY DECORATIONS -->
+<div class="strawberry-float-layer" aria-hidden="true">
+  <span class="sf">🍓</span><span class="sf">🍓</span><span class="sf">🍓</span><span class="sf">🍓</span>
+  <span class="sf">🍓</span><span class="sf">🍓</span><span class="sf">🍓</span><span class="sf">🍓</span>
+</div>
+
+<!-- NAV (共通ナビ) -->
+<nav id="main-nav" class="scrolled">
+  <a href="../index.html" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="nav-berry" x1="10" y1="10" x2="18" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#FF6B7A"/><stop offset="45%" stop-color="#E60033"/><stop offset="100%" stop-color="#B8001F"/>
+        </linearGradient>
+        <radialGradient id="nav-shine" cx="38%" cy="28%" r="38%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0.28"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="nav-hull" x1="14" y1="6" x2="14" y2="13" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#68D391"/><stop offset="100%" stop-color="#2F855A"/>
+        </linearGradient>
+      </defs>
+      <g opacity="0.92">
+        <path d="M14 11.5C14 11.5 13.5 7.5 14 5.5C14.5 7.5 14 11.5 14 11.5Z" fill="url(#nav-hull)"/>
+        <path d="M14 11C14 11 10.5 8.5 9.5 6.5C11.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"/>
+        <path d="M14 11C14 11 17.5 8.5 18.5 6.5C16.5 7.5 14 11 14 11Z" fill="url(#nav-hull)"/>
+        <path d="M13.5 11.5C13.5 11.5 9 10 7.5 8.5C9.5 9 13.5 11.5 13.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"/>
+        <path d="M14.5 11.5C14.5 11.5 19 10 20.5 8.5C18.5 9 14.5 11.5 14.5 11.5Z" fill="url(#nav-hull)" opacity="0.75"/>
+      </g>
+      <path d="M14 12C9.5 12 6 15.5 6.5 20C7 24 10.5 28.5 14 29C17.5 28.5 21 24 21.5 20C22 15.5 18.5 12 14 12Z" fill="url(#nav-berry)"/>
+      <ellipse cx="11.5" cy="18" rx="3.5" ry="4.5" fill="url(#nav-shine)"/>
+      <g fill="rgba(255,255,255,0.55)">
+        <circle cx="11.5" cy="17.5" r="0.85"/><circle cx="14" cy="15.5" r="0.85"/>
+        <circle cx="16.5" cy="17.5" r="0.85"/><circle cx="12.5" cy="21" r="0.85"/>
+        <circle cx="15.5" cy="21" r="0.85"/><circle cx="14" cy="24.5" r="0.75"/>
+        <circle cx="11" cy="14.5" r="0.7" opacity="0.7"/><circle cx="17" cy="14.5" r="0.7" opacity="0.7"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">
+      <span class="nav-logo-ja">山崎農園</span>
+      <span class="nav-logo-en">Yamazaki Farm</span>
+    </span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../tochiaika/tochiaika.html">とちあいかの魅力</a></li>
+    <li><a href="../cultivation/cultivation.html">こだわりの栽培</a></li>
+    <li><a href="../shop/chokubaijo.html">直売所</a></li>
+    <li><a href="#recruit-top" class="is-current">採用情報</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="nav-hamburger-line"></span>
+    <span class="nav-hamburger-line"></span>
+    <span class="nav-hamburger-line"></span>
+  </button>
+</nav>
+
+<!-- モバイルメニュー -->
+<div id="mobileMenuBackdrop" aria-hidden="true"></div>
+<aside id="mobileMenu" aria-hidden="true" role="dialog" aria-label="ナビゲーションメニュー">
+
+  <!-- ヘッダー行 -->
+  <div class="mm-header-row">
+    <div class="mm-header-left">
+      <span class="mm-header-label">MENU</span>
+      <span class="mm-header-line"></span>
+      <span class="mm-header-brand">YAMAZAKI FARM</span>
+    </div>
+    <button class="mm-close-btn" id="mobileMenuClose" aria-label="メニューを閉じる"></button>
+  </div>
+
+  <!-- ナビリスト -->
+  <ul class="mm-nav-list">
+    <li><a href="../index.html"              data-menu-link><span class="mm-n">00</span>ホーム</a></li>
+    <li><a href="../tochiaika/tochiaika.html"  data-menu-link><span class="mm-n">01</span>とちあいかの魅力</a></li>
+    <li><a href="../cultivation/cultivation.html" data-menu-link><span class="mm-n">02</span>こだわりの栽培</a></li>
+    <li><a href="../shop/chokubaijo.html"      data-menu-link><span class="mm-n">03</span>直売所</a></li>
+    <li><a href="#recruit-top"                         data-menu-link><span class="mm-n">04</span>採用情報</a></li>
+  </ul>
+
+  <!-- ブランドロゴ -->
+  <div class="mm-brand-visual">
+    <img src="yamazaki_logo_chars.png" alt="苺のやまざき YAMAZAKI FARM" loading="lazy">
+  </div>
+
+  <!-- 電話番号 -->
+  <a href="tel:09041214132" class="mm-tel-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.04 1h3a2 2 0 0 1 2 1.72c.13.96.34 1.9.61 2.81a2 2 0 0 1-.45 2.11L7.09 8.75a16 16 0 0 0 6 6l1.11-1.11a2 2 0 0 1 2.11-.45c.91.27 1.85.48 2.81.61A2 2 0 0 1 21 16.92z"/>
+    </svg>
+    <div class="mm-tel-body">
+      <span class="mm-tel-label">お電話でのお問い合わせ</span>
+      <span class="mm-tel-num">090-4121-4132</span>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="mm-ig-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+    @ichigo_no_yamazaki
+  </a>
+
+</aside>
+
+<!-- ① ファーストビュー -->
+<section id="recruit-top" class="recruit-hero">
+  <div class="recruit-hero-bg" aria-hidden="true">
+    <img src="./faimiliy2.png" alt="">
+    <div class="recruit-hero-overlay"></div>
+  </div>
+  <div class="recruit-hero-inner">
+    <span class="section-label recruit-hero-label">RECRUIT</span>
+    <h1 class="recruit-hero-title">
+      一緒に働く仲間を<br>募集しています
+    </h1>
+    <div class="recruit-hero-divider" aria-hidden="true"></div>
+    <p class="recruit-hero-sub">
+      いちごが好きな方、農業に興味がある方、<br>
+      山崎農園で一緒に働いてみませんか？
+    </p>
+  </div>
+  <div class="recruit-hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ③ 仕事内容 -->
+<section class="recruit-work" id="work">
+  <div class="container">
+    <div class="reveal recruit-work-head">
+      <span class="section-label">OUR WORK</span>
+      <h2 class="section-title">山崎農園のお仕事</h2>
+      <div class="section-divider"></div>
+      <p class="recruit-work-lead">
+        いちごが店頭に並ぶまで、<br class="sp-only">
+        4つのお仕事でひと粒ずつ大切に支えています。
+      </p>
+    </div>
+
+    <div class="work-grid">
+
+      <article class="reveal work-card">
+        <div class="work-card-num">01</div>
+        <div class="work-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 12c-5 0-8 3.5-7.5 8 .5 4 4 8.5 7.5 9 3.5-.5 7-5 7.5-9 .5-4.5-2.5-8-7.5-8z"/>
+            <path d="M20 11.5c0-1.5-.5-3.5 0-5"/>
+            <path d="M20 11c-2-1-4-2.5-5-4"/>
+            <path d="M20 11c2-1 4-2.5 5-4"/>
+            <circle cx="17" cy="20" r="0.8" fill="currentColor"/>
+            <circle cx="20" cy="22.5" r="0.8" fill="currentColor"/>
+            <circle cx="23" cy="20" r="0.8" fill="currentColor"/>
+            <circle cx="18.5" cy="25" r="0.8" fill="currentColor"/>
+            <circle cx="21.5" cy="25" r="0.8" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="work-card-title">収穫作業</h3>
+        <p class="work-card-text">
+          赤く色づいたいちごを、<br>
+          一粒ずつ丁寧に収穫します。
+        </p>
+        <p class="work-card-note">朝のハウスでの作業が中心です。</p>
+      </article>
+
+      <article class="reveal work-card">
+        <div class="work-card-num">02</div>
+        <div class="work-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 16h18l-1.5 14h-15z"/>
+            <path d="M14 16v-2a6 6 0 0 1 12 0v2"/>
+            <line x1="11" y1="20" x2="29" y2="20"/>
+          </svg>
+        </div>
+        <h3 class="work-card-title">パック詰め・出荷準備</h3>
+        <p class="work-card-text">
+          収穫したいちごを確認しながら、<br>
+          丁寧にパック詰めを行います。
+        </p>
+        <p class="work-card-note">きれいに並べる、地味だけど大切な作業。</p>
+      </article>
+
+      <article class="reveal work-card">
+        <div class="work-card-num">03</div>
+        <div class="work-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c-1.5 2-3 4-3 6.5 0 2 1.5 3.5 3 3.5s3-1.5 3-3.5c0-2.5-1.5-4.5-3-6.5z"/>
+            <path d="M20 20v10"/>
+            <path d="M13 26c2 1 4 1.5 7 1.5s5-.5 7-1.5"/>
+            <path d="M11 30h18"/>
+          </svg>
+        </div>
+        <h3 class="work-card-title">栽培管理</h3>
+        <p class="work-card-text">
+          苗の状態確認や水分管理など、<br>
+          毎日の栽培管理を行います。
+        </p>
+        <p class="work-card-note">いちごの一日に、寄り添う仕事です。</p>
+      </article>
+
+      <article class="reveal work-card">
+        <div class="work-card-num">04</div>
+        <div class="work-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 18l2-6h16l2 6"/>
+            <path d="M10 18v12h20V18"/>
+            <path d="M16 18v3a4 4 0 0 0 8 0v-3"/>
+            <line x1="10" y1="18" x2="30" y2="18"/>
+          </svg>
+        </div>
+        <h3 class="work-card-title">直売所対応</h3>
+        <p class="work-card-text">
+          お客様へ朝採りいちごをお渡しする、<br>
+          直売所での接客対応です。
+        </p>
+        <p class="work-card-note">「ありがとう」を直接いただける場所。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ④ 働く環境 -->
+<section class="recruit-env">
+  <div class="container">
+    <div class="recruit-env-inner">
+
+      <div class="reveal recruit-env-image">
+        <img src="./kodawari.jpg" alt="山崎農園のいちごハウス">
+        <span class="recruit-env-tag">YAMAZAKI FARM</span>
+      </div>
+
+      <div class="reveal recruit-env-body">
+        <span class="section-label">OUR ENVIRONMENT</span>
+        <h2 class="section-title">働きやすい環境づくり</h2>
+        <div class="section-divider"></div>
+
+        <ul class="env-list">
+          <li>
+            <span class="env-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L6.5 12 13 4.5"/></svg>
+            </span>
+            <span>未経験歓迎</span>
+          </li>
+          <li>
+            <span class="env-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L6.5 12 13 4.5"/></svg>
+            </span>
+            <span>丁寧なサポート</span>
+          </li>
+          <li>
+            <span class="env-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L6.5 12 13 4.5"/></svg>
+            </span>
+            <span>アットホームな環境</span>
+          </li>
+          <li>
+            <span class="env-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L6.5 12 13 4.5"/></svg>
+            </span>
+            <span>若い農家ならではの明るい雰囲気</span>
+          </li>
+          <li>
+            <span class="env-check" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L6.5 12 13 4.5"/></svg>
+            </span>
+            <span>スタッフ同士の距離が近い</span>
+          </li>
+        </ul>
+
+        <blockquote class="env-quote">
+          <span class="env-quote-mark" aria-hidden="true">“</span>
+          農業が初めてでも<br>
+          安心して働ける環境を<br>
+          大切にしています。
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 求める人物像 -->
+<section class="recruit-welcome" id="welcome">
+  <div class="container">
+    <div class="reveal recruit-welcome-head">
+      <span class="section-label">WELCOME</span>
+      <h2 class="section-title">こんな方を歓迎しています</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <ul class="welcome-list reveal">
+      <li>
+        <span class="welcome-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5L10 17.5 19 7.5"/></svg>
+        </span>
+        <span class="welcome-text">いちごが好きな方</span>
+      </li>
+      <li>
+        <span class="welcome-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5L10 17.5 19 7.5"/></svg>
+        </span>
+        <span class="welcome-text">コツコツ作業が好きな方</span>
+      </li>
+      <li>
+        <span class="welcome-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5L10 17.5 19 7.5"/></svg>
+        </span>
+        <span class="welcome-text">外で体を動かすのが好きな方</span>
+      </li>
+      <li>
+        <span class="welcome-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5L10 17.5 19 7.5"/></svg>
+        </span>
+        <span class="welcome-text">農業に興味がある方</span>
+      </li>
+      <li>
+        <span class="welcome-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5L10 17.5 19 7.5"/></svg>
+        </span>
+        <span class="welcome-text">一緒に農園を盛り上げたい方</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ⑤-2 募集要項（求人情報） -->
+<section class="recruit-req" id="requirements">
+  <span class="recruit-req-deco recruit-req-deco--1" aria-hidden="true">🍓</span>
+  <span class="recruit-req-deco recruit-req-deco--2" aria-hidden="true">🍓</span>
+  <div class="container">
+    <div class="reveal recruit-req-head">
+      <span class="section-label">REQUIREMENTS</span>
+      <h2 class="section-title">募集要項</h2>
+      <div class="section-divider section-divider--center"></div>
+      <p class="recruit-req-lead">
+        勤務時間や給与など、<br class="sp-only">
+        働く条件をまとめました。
+      </p>
+    </div>
+
+    <dl class="reveal req-table">
+
+      <!-- 勤務時間 -->
+      <div class="req-row">
+        <dt class="req-term">
+          <span class="req-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          </span>
+          <span class="req-term-text">勤務時間<span class="req-term-en">WORKING HOURS</span></span>
+        </dt>
+        <dd class="req-desc">
+          7:30〜8:30の間で自由出勤<br>
+          基本12:00まで（午前中のみ）
+        </dd>
+      </div>
+
+      <!-- 休日 -->
+      <div class="req-row">
+        <dt class="req-term">
+          <span class="req-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+          </span>
+          <span class="req-term-text">休日<span class="req-term-en">HOLIDAYS</span></span>
+        </dt>
+        <dd class="req-desc">水曜日・日曜日</dd>
+      </div>
+
+      <!-- 勤務日数 -->
+      <div class="req-row">
+        <dt class="req-term">
+          <span class="req-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M4 10h16"/><path d="M9.5 15.5l1.8 1.8 3.4-3.4"/></svg>
+          </span>
+          <span class="req-term-text">勤務日数<span class="req-term-en">WORKING DAYS</span></span>
+        </dt>
+        <dd class="req-desc">
+          週2日〜<br>
+          ご希望に合わせて柔軟に対応します
+        </dd>
+      </div>
+
+      <!-- 給与形態 -->
+      <div class="req-row req-row--salary">
+        <dt class="req-term">
+          <span class="req-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8.5l3 4 3-4M12 12.5v5M9.5 14h5M9.5 16.2h5"/></svg>
+          </span>
+          <span class="req-term-text">給与形態<span class="req-term-en">SALARY</span></span>
+        </dt>
+        <dd class="req-desc">時給 1,070円<span class="req-yen-unit">〜</span></dd>
+      </div>
+
+      <!-- 待遇・福利厚生 -->
+      <div class="req-row">
+        <dt class="req-term">
+          <span class="req-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M4 13h16M12 9v11"/><path d="M12 9S10.6 5.2 8.6 5.2 6.2 7.6 8.2 8.5c1.1.5 3.8.5 3.8.5zM12 9s1.4-3.8 3.4-3.8S17.8 7.6 15.8 8.5c-1.1.5-3.8.5-3.8.5z"/></svg>
+          </span>
+          <span class="req-term-text">待遇・福利厚生<span class="req-term-en">BENEFITS</span></span>
+        </dt>
+        <dd class="req-desc">
+          交通費支給<br>
+          車通勤可
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- 応募・お問い合わせ導線 -->
+    <div class="reveal recruit-req-foot">
+      <p class="recruit-req-foot-text">
+        条件について気になる点は、<br class="sp-only">お気軽にご相談ください。
+      </p>
+      <a href="#contact" class="recruit-req-btn">
+        応募・お問い合わせへ
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ メッセージ -->
+<section class="recruit-message">
+  <span class="recruit-deco recruit-deco--1" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--2" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--3" aria-hidden="true">🍓</span>
+  <span class="recruit-deco recruit-deco--4" aria-hidden="true">🍓</span>
+  <div class="container">
+    <div class="reveal recruit-message-inner">
+      <span class="section-label">MESSAGE</span>
+      <h2 class="section-title recruit-message-title">
+        一緒に山崎農園を<br>
+        育てていける仲間へ
+      </h2>
+      <div class="section-divider section-divider--center"></div>
+      <p class="recruit-message-body">
+        山崎農園では、<br>
+        毎日の小さな積み重ねを大切にしています。<br><br>
+        一粒一粒に向き合いながら、<br>
+        一緒に農園を支えてくれる仲間を募集しています。<br><br>
+        まずはお気軽にお問い合わせください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ CTA -->
+<section class="recruit-cta" id="contact">
+  <div class="container">
+    <div class="reveal recruit-cta-inner">
+      <p class="recruit-cta-lead">
+        ご応募・ご質問は、<br class="sp-only">
+        お電話または各SNSからお気軽にどうぞ。
+      </p>
+
+      <div class="recruit-cta-actions">
+        <a href="tel:09041214132" class="recruit-cta-primary">
+          <span class="recruit-cta-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.34 1.87.61 2.76a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.32-1.27a2 2 0 0 1 2.11-.45c.89.27 1.82.48 2.76.61a2 2 0 0 1 1.72 2z"/></svg>
+          </span>
+          <span class="recruit-cta-label-wrap">
+            <span class="recruit-cta-label-small">採用について問い合わせる</span>
+            <span class="recruit-cta-label-main">090-4121-4132</span>
+          </span>
+        </a>
+
+        <a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener" class="recruit-cta-secondary">
+          <span class="recruit-cta-icon recruit-cta-icon--ig" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="recruitIgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f09433"/>
+                  <stop offset="25%" stop-color="#e6683c"/>
+                  <stop offset="50%" stop-color="#dc2743"/>
+                  <stop offset="75%" stop-color="#cc2366"/>
+                  <stop offset="100%" stop-color="#bc1888"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#recruitIgGrad)"/>
+              <rect x="6.5" y="6.5" width="11" height="11" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+              <circle cx="16.5" cy="7.5" r="0.8" fill="white"/>
+            </svg>
+          </span>
+          <span class="recruit-cta-label-wrap">
+            <span class="recruit-cta-label-small">Instagramでも発信中</span>
+            <span class="recruit-cta-label-main">@ichigo_no_yamazaki</span>
+          </span>
+          <span class="recruit-cta-arrow" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <p class="recruit-cta-note">
+        ※ 採用に関するお問い合わせは、<br class="sp-only">
+        お電話または Instagram DM までお願いいたします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <img src="./yamazaki_logo.png" alt="苺のやまざき" style="height:72px;width:auto;display:block;margin-bottom:16px;border-radius:50%;background:rgba(255,255,255,0.08);padding:6px;">
+        <p class="footer-tagline">
+          いちご王国・栃木から、<br>最高の一粒をお届けします。<br><br>
+          〒321-0147 栃木県宇都宮市針ヶ谷町239-1<br>
+          TEL: 090-4121-4132
+        </p>
+      </div>
+      <div class="footer-nav-block">
+        <div class="footer-nav-title">
+          <span class="footer-nav-title-en">FARM MENU</span>
+          <span class="footer-nav-title-ja">農園メニュー</span>
+        </div>
+        <ul class="footer-nav-list">
+          <li><a href="../index.html#features">いちごづくり</a></li>
+          <li><a href="../index.html#story">農園の想い</a></li>
+          <li><a href="../index.html#shop">直売所案内</a></li>
+          <li><a href="#recruit-top">採用情報</a></li>
+          <li><a href="../index.html#about">農園概要</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-block">
+        <div class="footer-nav-title">
+          <span class="footer-nav-title-en">CONTACT</span>
+          <span class="footer-nav-title-ja">お問い合わせ</span>
+        </div>
+        <ul class="footer-nav-list">
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="https://www.instagram.com/ichigo_no_yamazaki/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 山崎農園 All Rights Reserved.</span>
+      <a href="https://www.instagram.com/ichigo_no_yamazaki/" class="footer-instagram" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#recruit-top" class="back-top" id="backTop" aria-label="ページトップへ戻る">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+
+<!-- フローティング お問い合わせボタン -->
+<a href="#contact" class="fab-contact" id="fabContact" aria-label="お問い合わせへ移動">
+  <span class="fab-contact-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+      <path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+    </svg>
+  </span>
+  <span class="fab-contact-text">お問い合わせ</span>
+</a>
+
+<script src="script-recruit.js"></script>
+</body>
+</html>
